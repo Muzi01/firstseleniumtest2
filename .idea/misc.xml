@@ -11,4 +11,11 @@
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_9" project-jdk-name="9 (1)" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
+  <component name="SuppressABINotification">
+    <option name="modulesWithSuppressedNotConfigured">
+      <set>
+        <option value="firstseleniumtest2" />
+      </set>
+    </option>
+  </component>
 </project>
