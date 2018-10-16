@@ -6,7 +6,7 @@ package com.swtestacademy.webdriver;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 //import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -19,9 +19,9 @@ public class FirstAutomationTest {
     @Test
     //Start to write our test method. It should ends with "Test"
     public void firefoxTest(){
-
+        System.setProperty("webdriver.chrome.driver", "C:\\1\\chromedriver.exe");
         //Step 1- Driver Instantiation: Instantiate driver object as FirefoxDriver
-        WebDriver driver = new FirefoxDriver();
+        WebDriver driver = new ChromeDriver();
 
         //Step 2- Navigation: Open a website
         driver.navigate().to("https://www.teknosa.com/");
