@@ -8,12 +8,14 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-//import org.openqa.selenium.chrome.ChromeDriver;
+//import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
  * Created by ONUR BASKIRT on 26.08.2015.
  */
 public class FirstAutomationTest {
+
+
 
     //We should add @Test annotation that JUnit will run below method
     @Test
