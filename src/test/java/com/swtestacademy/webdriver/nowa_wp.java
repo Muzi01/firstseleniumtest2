@@ -17,11 +17,12 @@ public class nowa_wp {
     private StringBuffer verificationErrors = new StringBuffer ( );
 
     @Before
+
     public void setUp( ) {
         System.setProperty ( "webdriver.chrome.driver" , "C:\\1\\chromedriver.exe" );
         driver = new ChromeDriver ( );
         baseUrl = "https://www.katalon.com/";
-        driver.manage ( ).timeouts ( ).implicitlyWait ( 30 , TimeUnit.SECONDS );
+        driver.manage ( ).timeouts ( ).implicitlyWait ( 1 , TimeUnit.SECONDS );
     }
 
     @Test
