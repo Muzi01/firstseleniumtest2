@@ -1,8 +1,10 @@
 package com.swtestacademy.webdriver;
 
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,15 +21,20 @@ public class allegro_logowanie {
     private boolean acceptNextAlert = true;
     private StringBuffer verificationErrors = new StringBuffer ( );
 
-    @Before
-
-    public void setUp( ) {
-        System.setProperty ( "webdriver.chrome.driver" , "C:\\1\\chromedriver.exe" );
-        driver = new ChromeDriver ( );
-        baseUrl = "https://www.katalon.com/";
-        driver.manage ( ).timeouts ( ).implicitlyWait ( 39 , TimeUnit.SECONDS );
+    @BeforeClass
+    public static void setupClass() {
+        WebDriverManager.chromedriver().setup();
     }
-
+    @Before
+    public void setupTest() {
+        driver = new ChromeDriver();
+    }
+    @After
+    public void teardown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
     @Test
     public void testAllegroLogowanie( ) {
         driver.get ( "https://allegro.pl/" );

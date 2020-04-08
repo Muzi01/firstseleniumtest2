@@ -7,6 +7,9 @@ import cucumber.api.java.en.When;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import io.github.bonigarcia.wdm.ChromiumDriverManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -16,10 +19,26 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.assertTrue;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class Basket {
-    WebDriver driver;
+
+    private WebDriver driver;
+     @BeforeClass
+     public static void setupClass() {
+         WebDriverManager.chromedriver().setup();
+     }
+    @Before
+    public void setupTest() {
+        driver = new ChromeDriver();
+    }
+    @After
+    public void teardown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 
     @Given("^that i am on the shopping website$")
     public void that_i_am_on_the_shopping_website() throws Throwable {

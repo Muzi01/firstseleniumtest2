@@ -1,17 +1,35 @@
 package com.swtestacademy.webdriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class test2 {
-
+    private WebDriver driver;
+    @BeforeClass
+    public static void setupClass() {
+        WebDriverManager.chromedriver().setup();
+    }
+    @Before
+    public void setupTest() {
+        driver = new ChromeDriver();
+    }
+    @After
+    public void teardown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
     //We should add @Test annotation that JUnit will run below method
     @Test
     //Start to write our test method. It should ends with "Test"
     public void firefoxTest( ) {
-        System.setProperty ( "webdriver.chrome.driver" , "C:\\1\\chromedriver.exe" );
-        //Step 1- Driver Instantiation: Instantiate driver object as FirefoxDriver
+
         WebDriver driver = new ChromeDriver( );
 
         //Step 2- Navigation: Open a website
