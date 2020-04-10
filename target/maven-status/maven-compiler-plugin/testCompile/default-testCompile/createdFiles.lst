@@ -1,9 +1,13 @@
+com/swtestacademy/webdriver/SimpleGetTest.class
 com/swtestacademy/webdriver/FirstAutomationTest.class
 Driver/DriverFactory.class
+com/swtestacademy/webdriver/BrokenLinks.class
 Driver/FirefoxBrowser.class
+com/swtestacademy/webdriver/P1.class
 com/swtestacademy/webdriver/nowa_wp.class
 runners/MyRunner.class
 com/swtestacademy/webdriver/Ca.class
+com/swtestacademy/webdriver/IdentifyingBrokenLinks.class
 com/swtestacademy/webdriver/test2.class
 com/swtestacademy/webdriver/cucumber.class
 Driver/MobileTypes.class

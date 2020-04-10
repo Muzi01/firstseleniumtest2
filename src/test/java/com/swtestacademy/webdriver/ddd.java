@@ -18,7 +18,7 @@ public class ddd {
     private WebDriver driver;
     private String baseUrl;
     private boolean acceptNextAlert = true;
-    private StringBuffer verificationErrors = new StringBuffer();
+    private final StringBuffer verificationErrors = new StringBuffer();
 
     @BeforeClass
     public static void setupClass() {
@@ -37,6 +37,7 @@ public class ddd {
 
     @Test
     public void testUntitledTestCase() {
+
         driver.get("https://niebespiecznik.pl/");
         driver.findElement(By.linkText("niebe*Z*piecznik.pl")).click();
         driver.findElement(By.linkText("Praca")).click();
