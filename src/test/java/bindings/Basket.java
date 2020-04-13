@@ -10,6 +10,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -19,16 +20,23 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.assertTrue;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+
+
 
 
 public class Basket {
 
     private WebDriver driver;
-     @BeforeClass
-     public static void setupClass() {
-         WebDriverManager.chromedriver().setup();
-     }
+
+
+    @BeforeClass
+    public static void setupClass() {
+        WebDriverManager.chromedriver().setup();
+    }
     @Before
     public void setupTest() {
         driver = new ChromeDriver();
@@ -39,7 +47,7 @@ public class Basket {
             driver.quit();
         }
     }
-
+    @Test
     @Given("^that i am on the shopping website$")
     public void that_i_am_on_the_shopping_website() throws Throwable {
 

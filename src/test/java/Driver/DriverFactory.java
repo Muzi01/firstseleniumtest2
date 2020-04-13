@@ -22,7 +22,7 @@ public class DriverFactory {
     private Dimension resolution = new Dimension(1440, 900);
     private String browserType;
 
-    public WebDriver getDriver() {
+    public  WebDriver getDriver() {
         if (Objects.isNull(driver)) {
             browserType = System.getProperty("browser.type") == null ? "chrome"
                     : System.getProperty("browser.type").toLowerCase();

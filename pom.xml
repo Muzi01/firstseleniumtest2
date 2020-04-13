@@ -45,6 +45,14 @@
             <version>1.2.5</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+
+
 
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -124,6 +132,18 @@
             <artifactId>gherkin</artifactId>
             <version>2.12.2</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.thoughtworks.selenium/com.springsource.com.thoughtworks.selenium -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-leg-rc</artifactId>
+            <version>3.5.1</version>
+        </dependency>
+        <!-- Thanks for using https://jar-download.com -->
+
+
+
+
+
 
         <!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-all -->
         <dependency>
@@ -157,6 +177,15 @@
             <artifactId>extentreports</artifactId>
             <version>3.0.5</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.pojosontheweb/selenium-utils -->
+        <dependency>
+            <groupId>com.pojosontheweb</groupId>
+            <artifactId>selenium-utils</artifactId>
+            <version>2.0.0</version>
+            <type>pom</type>
+        </dependency>
+
+
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
