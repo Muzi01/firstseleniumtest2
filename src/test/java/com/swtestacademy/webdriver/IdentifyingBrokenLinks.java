@@ -8,10 +8,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import static io.restassured.RestAssured.*;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import static io.restassured.RestAssured.given;
 
 public class IdentifyingBrokenLinks {
 
@@ -21,6 +22,7 @@ public class IdentifyingBrokenLinks {
     public void setUp() {
 
         WebDriverManager.chromedriver().setup();
+
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
