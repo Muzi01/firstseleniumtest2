@@ -5,12 +5,15 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import jdk.nashorn.internal.runtime.logging.DebugLogger;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.junit.AfterClass;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.NoSuchSessionException;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeClass;
 
+import javax.annotation.PreDestroy;
 import java.util.concurrent.TimeUnit;
 
 public class Driver {
@@ -23,9 +26,10 @@ public class Driver {
     public static void setupClass() throws IllegalAccessException, InstantiationException, ClassNotFoundException {
         DriverManagerType chrome = DriverManagerType.CHROME;
         WebDriverManager.getInstance(chrome).setup();
-        Class<?> chromeClass =  Class.forName(chrome.browserClass());
+        Class<?> chromeClass = Class.forName(chrome.browserClass());
         driver = (WebDriver) chromeClass.newInstance();
         driver.manage().deleteAllCookies();
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.manage().window().setPosition(new Point(0, 0));
         driver.manage().timeouts().implicitlyWait(DriverConfig.MAX_OBJECT_TIMEOUT,
                 TimeUnit.SECONDS);
@@ -35,5 +39,6 @@ public class Driver {
         LOGGER.info(
                 "Chrome webdriver version: {}", WebDriverManager.chromedriver().getDownloadedVersion());
 
+
+        }
     }
-}
