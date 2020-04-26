@@ -3,6 +3,7 @@ package com.swtestacademy.webdriver;
 
 import Driver.DriverFactory;
 import bindings.BaseTestClass;
+import bindings.driver.Driver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
@@ -13,9 +14,8 @@ import org.testng.annotations.Test;
 
 import static org.junit.Assert.fail;
 
-public class cucumber2 extends DriverFactory {
+public class cucumber2 extends Driver {
 
- static WebDriver  driver;
 
     @Test
     public void testUntitledTestCase( ) {
