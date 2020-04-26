@@ -18,7 +18,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class DriverFactory {
     private static final Logger LOGGER = LogManager.getLogger(DriverFactory.class);
 
-    private WebDriver driver;
+    public WebDriver driver;
     private Dimension resolution = new Dimension(1440, 900);
     private String browserType;
 
