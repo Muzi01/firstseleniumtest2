@@ -5,12 +5,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import jdk.nashorn.internal.runtime.logging.DebugLogger;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.AfterClass;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.NoSuchSessionException;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import javax.annotation.PreDestroy;
@@ -41,4 +41,7 @@ public class Driver {
 
 
         }
-    }
+    @AfterClass
+    public void tearDown () {
+        driver.quit();
+    }}
