@@ -22,7 +22,7 @@ public class ddd {
 
     @BeforeClass
     public static void setupClass() {
-        WebDriverManager.chromedriver().setup();
+            WebDriverManager.chromedriver().setup();
     }
     @Before
     public void setupTest() {

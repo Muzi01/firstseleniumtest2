@@ -11,4 +11,12 @@ public class LoginPage  {
     @FindBy (linkText ="Dalej")
     public   WebElement  Dalej;
 
+
+    public void email() {
+        email.sendKeys("piotr.kramkowski@gmail.com");
+    }
+
+    public void Dalej(){
+        Dalej.click();
+    }
 }
