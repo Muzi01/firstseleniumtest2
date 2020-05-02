@@ -1,0 +1,9 @@
+@lv @functional @credit24  @registration @application
+Feature: Registration LV Credit24
+  Registration process on Credit24 Latvia
+
+
+  @smoke @TEST-5977 @medium @FT_onboarding_application
+  Scenario: TEST-5977 - CL - Registration Without Draw
+    When I am on Niebespiecznik  page
+    And I click niebespiecznik button

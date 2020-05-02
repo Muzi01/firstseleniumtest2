@@ -3,14 +3,10 @@ package com.swtestacademy.webdriver;
 
 import bindings.driver.Driver;
 import bindings.driver.SeleniumHelper;
-import org.junit.runner.RunWith;
-import org.openqa.selenium.*;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
-
-import static org.junit.Assert.fail;
 
 public class cucumber2 extends Driver {
     @FindBy(linkText = "niebe*Z*piecznik.pl")
@@ -26,7 +22,7 @@ public class cucumber2 extends Driver {
     private WebElement Szkolenia;
 
     @Test
-    public void niebespiecznik() throws InterruptedException {
+    public void nightstick() throws InterruptedException {
         SeleniumHelper helper = new SeleniumHelper( );
         PageFactory.initElements(driver, this);
         driver.get("https://niebespiecznik.pl/");
