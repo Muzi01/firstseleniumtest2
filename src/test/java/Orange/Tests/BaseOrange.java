@@ -16,8 +16,12 @@ public class BaseOrange extends Driver {
     public void OrangeLogowanie() {
         SeleniumHelper helper = new SeleniumHelper();
         LoginPage = new LoginPage() ;
-        PageFactory.initElements(driver, LoginPage);
+     PageFactory.initElements(driver, this);
+        LoginPage LoginPage = new LoginPage ();
         driver.get("https://www.orange.pl/zaloguj.phtml");
+        LoginPage.Kontakt.click ();
+
+
 
 
     }
