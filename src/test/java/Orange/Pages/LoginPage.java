@@ -1,13 +1,14 @@
 package Orange.Pages;
 
 import bindings.driver.Driver;
-import org.openqa.selenium.WebDriver;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 @StoryProxyComponent
-public class LoginPage  {
+public class LoginPage extends Driver {
+    private static final Logger LOGGER = LogManager.getLogger (LoginPage.class);
 
     @FindBy (id ="login-field"  )
     public WebElement email;
@@ -29,11 +30,10 @@ public class LoginPage  {
             "\t\t\t\t\t\t\t\t\t\t")
     public   WebElement  Zaloguj2;
 
-    public LoginPage (Driver driver) {
-        PageFactory.initElements((WebDriver) driver, this);
-    }
 
-    public void email() {
+
+
+    public void email () {
         email.sendKeys("piotr.kramkowski@gmail.com");
     }
     public void Kontakt() {

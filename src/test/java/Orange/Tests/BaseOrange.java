@@ -1,25 +1,24 @@
 package Orange.Tests;
 
 import Orange.Pages.LoginPage;
-import bindings.driver.Driver;
-import bindings.driver.SeleniumHelper;
-import org.openqa.selenium.support.PageFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
 
-public class BaseOrange extends Driver {
-
+public class BaseOrange extends Orange.Pages.LoginPage {
+    private static final Logger LOGGER = LogManager.getLogger(BaseOrange.class);
     public Object LoginPage;
     private Object page;
 
     @Test
 
     public void OrangeLogowanie() {
-        SeleniumHelper helper = new SeleniumHelper();
-        LoginPage = new LoginPage() ;
-     PageFactory.initElements(driver, this);
-        LoginPage LoginPage = new LoginPage ();
-        driver.get("https://www.orange.pl/zaloguj.phtml");
-        LoginPage.Kontakt.click ();
+    driver.get ("https://www.orange.pl/zaloguj.phtml");
+        Orange.Pages.LoginPage loginPage = new LoginPage ();
+        LOGGER.info (Dalej);
+Zaloguj.click ();
+
+
 
 
 
