@@ -5,54 +5,59 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.annotations.Test;
 
 @StoryProxyComponent
 public class LoginPage extends Driver {
-    private static final Logger LOGGER = LogManager.getLogger (LoginPage.class);
+    private static final Logger LOGGER = LogManager.getLogger(LoginPage.class);
 
-    @FindBy (id ="login-field"  )
+    @FindBy(id = "login-field")
     public WebElement email;
 
-    @FindBy (linkText ="Dalej")
-    public   WebElement  Dalej;
+    @FindBy(linkText = "Dalej")
+    public WebElement Dalej;
 
-    @FindBy (linkText ="Zaloguj")
-    public   WebElement  Zaloguj;
+    @FindBy(linkText = "Zaloguj")
+    public WebElement Zaloguj;
 
-    @FindBy (id ="drawerLink-0")
-    public   WebElement  Kontakt;
+    @FindBy(id = "drawerLink-0")
+    public WebElement Kontakt;
 
-    @FindBy (id = "emptyLogin")
-    public  WebElement Login2 ;
+    @FindBy(id = "emptyLogin")
+    public WebElement Login2;
 
-    @FindBy (linkText ="\n" +
+    @FindBy(linkText = "\n" +
             "\t\t\t\t\t\t\t\t\t\t\tZaloguj się\n" +
             "\t\t\t\t\t\t\t\t\t\t")
-    public   WebElement  Zaloguj2;
+    public WebElement Zaloguj2;
 
 
-
-
-    public void email () {
+    public void email() {
         email.sendKeys("piotr.kramkowski@gmail.com");
     }
+
     public void Kontakt() {
-        Kontakt.click ();
-    }
-    public void Dalej (){
-        Dalej.click ();
-        }
-
-    public void Zaloguj (){
-        Zaloguj.click ();
+        Kontakt.click();
     }
 
-    public void Login2 (){
-        Login2.sendKeys ("Pioneer123!");
-        }
-
-        public  void  Zaloguj2 (){
-        Zaloguj2.click ();
-    }
+    public void Dalej() {
+        Dalej.click();
     }
 
+    public void Zaloguj() {
+        Zaloguj.click();
+    }
+
+    public void Login2() {
+        Login2.sendKeys("Pioneer123!");
+    }
+
+    public void Zaloguj2() {
+        Zaloguj2.click();
+    }
+    @Test
+    public void OrangeLogowanie() {
+        driver.get("https://www.orange.pl/zaloguj.phtml");
+        email();
+    }
+}

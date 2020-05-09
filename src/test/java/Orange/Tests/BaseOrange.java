@@ -14,7 +14,7 @@ public class BaseOrange extends Orange.Pages.LoginPage {
 
     public void OrangeLogowanie() {
     driver.get ("https://www.orange.pl/zaloguj.phtml");
-        Orange.Pages.LoginPage loginPage = new LoginPage ();
+     email();
         LOGGER.info (Dalej);
 Zaloguj.click ();
 
