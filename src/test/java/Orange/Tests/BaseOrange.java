@@ -10,7 +10,6 @@ public class BaseOrange extends Orange.Pages.LoginPage {
     private Object page;
 
     @Test
-
     public void OrangeLogowanie() {
     driver.get ("https://www.orange.pl/zaloguj.phtml");
 
