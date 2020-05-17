@@ -32,8 +32,8 @@ public class IdentifyingBrokenLinks {
     @Test
     public void printBrokenLinks() {
 
-        driver.get("https://www.google.pl");
-        List<WebElement> anchor_links = driver.findElements(By.tagName("g"));
+        driver.get("https://www.youtube.pl");
+        List<WebElement> anchor_links = driver.findElements(By.linkText("youtube"));
 
         //getting the urls of the links into another List
         List<String> link_urls = null;

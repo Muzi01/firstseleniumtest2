@@ -33,6 +33,7 @@ public class LoginPage extends Driver {
 
 
 
+
     public void email () {
         email.sendKeys("piotr.kramkowski@gmail.com");
     }
