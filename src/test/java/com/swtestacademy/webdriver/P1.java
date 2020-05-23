@@ -1,5 +1,10 @@
 package com.swtestacademy.webdriver;
 
+import bindings.driver.Driver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -7,32 +12,9 @@ import java.net.URL;
 import java.util.Iterator;
 import java.util.List;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+public class P1 extends Driver {
 
-public class P1 {
 
-    private static WebDriver driver;
-    @BeforeClass
-    public static void setupClass() {
-        WebDriverManager.chromedriver().setup();
-    }
-    @Before
-    public void setupTest() {
-        driver = new ChromeDriver();
-    }
-    @After
-    public void teardown() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }
 
   //  private static WebDriver driver = null;
 
