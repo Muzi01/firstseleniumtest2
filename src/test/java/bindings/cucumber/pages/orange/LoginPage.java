@@ -1,4 +1,4 @@
-package Orange.Pages;
+package bindings.cucumber.pages.orange;
 
 import bindings.driver.Driver;
 import org.apache.logging.log4j.LogManager;

@@ -1,4 +1,4 @@
-package Orange.Pages;
+package bindings.cucumber.pages.orange;
 
 public @interface StoryProxyComponent {
 }
