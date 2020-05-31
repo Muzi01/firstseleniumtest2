@@ -1,4 +1,4 @@
-package tests.Tauron.Tests;
+package tests.legacy;
 
 import org.testng.annotations.Test;
 import io.restassured.RestAssured;

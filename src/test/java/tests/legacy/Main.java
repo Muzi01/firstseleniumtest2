@@ -1,4 +1,4 @@
-package tests.Tauron.Tests;
+package tests.legacy;
 
 public class Main {
 

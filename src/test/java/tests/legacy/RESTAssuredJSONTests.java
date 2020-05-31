@@ -1,4 +1,4 @@
-package tests.Tauron.Tests;
+package tests.legacy;
 
 import io.restassured.response.Response;
 import org.hamcrest.Matchers;

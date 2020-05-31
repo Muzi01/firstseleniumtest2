@@ -1,4 +1,4 @@
-package tests.Tauron.Tests;
+package tests.legacy;
 
 import cucumber.api.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
