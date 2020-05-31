@@ -15,7 +15,7 @@ public class BaseOrange extends bindings.cucumber.pages.orange.LoginPage {
     driver.get ("https://www.orange.pl/zaloguj.phtml");
 
         LOGGER.info (Dalej);
-        Zaloguj.click ();
+        email();
 
 
 

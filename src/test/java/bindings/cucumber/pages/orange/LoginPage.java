@@ -30,10 +30,6 @@ public class LoginPage extends Driver {
             "\t\t\t\t\t\t\t\t\t\t")
     public   WebElement  Zaloguj2;
 
-
-
-
-
     public void email () {
         email.sendKeys("piotr.kramkowski@gmail.com");
     }
