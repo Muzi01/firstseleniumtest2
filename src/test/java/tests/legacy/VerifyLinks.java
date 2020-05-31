@@ -1,17 +1,14 @@
-package com.swtestacademy.webdriver;
+package tests.legacy;
 
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
 import bindings.driver.Driver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class VerifyLinks extends Driver {
     public static int invalidLink;

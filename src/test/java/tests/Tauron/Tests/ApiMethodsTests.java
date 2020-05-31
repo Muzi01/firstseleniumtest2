@@ -1,4 +1,4 @@
-package Tauron.Tests;
+package tests.Tauron.Tests;
 
 import com.jayway.restassured.RestAssured;
 import io.restassured.http.Method;

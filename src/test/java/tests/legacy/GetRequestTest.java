@@ -1,15 +1,13 @@
-package com.swtestacademy.webdriver;
+package tests.legacy;
 
 import bindings.driver.Driver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import io.restassured.http.ContentType;
+
 import io.restassured.response.Response;
 import static io.restassured.RestAssured.*;
 

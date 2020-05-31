@@ -1,4 +1,4 @@
-package Tauron.Tests;
+package tests.Tauron.Tests;
 
 import bindings.driver.HelperMethods;
 import bindings.driver.RestUtil;

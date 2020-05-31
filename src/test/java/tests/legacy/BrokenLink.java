@@ -1,4 +1,4 @@
-package com.swtestacademy.webdriver;
+package tests.legacy;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -6,9 +6,7 @@ import java.util.List;
 
 import bindings.driver.Driver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
 public class BrokenLink extends Driver {

@@ -1,4 +1,4 @@
-package com.swtestacademy.webdriver;
+package tests.legacy;
 
 import bindings.driver.Driver;
 import org.openqa.selenium.By;

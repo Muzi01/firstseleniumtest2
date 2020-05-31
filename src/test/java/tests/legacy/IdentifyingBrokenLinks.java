@@ -1,7 +1,8 @@
-package com.swtestacademy.webdriver;
+package tests.legacy;
 
-import bindings.driver.Driver;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,14 +16,27 @@ import java.util.concurrent.TimeUnit;
 
 import static io.restassured.RestAssured.given;
 
-public class IdentifyingBrokenLinks2 extends Driver {
+public class IdentifyingBrokenLinks {
+    private static Logger logger = LogManager.getLogger(IdentifyingBrokenLinks.class);
 
+    private WebDriver driver;
+
+    @BeforeMethod
+    public void setUp() {
+
+        WebDriverManager.chromedriver().setup();
+
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+    }
 
     @Test
     public void printBrokenLinks() {
 
-        driver.get("https://www.google.pl");
-        List<WebElement> anchor_links = driver.findElements(By.tagName("g"));
+        driver.get("https://www.wp.pl");
+        List<WebElement> anchor_links = driver.findElements(By.linkText ("y"));
 
         //getting the urls of the links into another List
         List<String> link_urls = null;
