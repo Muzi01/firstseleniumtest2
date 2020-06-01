@@ -1,5 +1,6 @@
 package tests.legacy;
-
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -9,52 +10,24 @@ import java.util.List;
 import bindings.driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
 
 public class VerifyLinks extends Driver {
     public static int invalidLink;
     String currentLink;
     String temp;
 
-    public static void main(String[] args) throws IOException {
-        // Launch The Browser
+    @Test
+    public void test_NumberOfCircuitsFor2017Season_ShouldBe20() {
 
-        // Enter Url
-        driver.get("https://www.gov.pl/");
-
-        // Get all the links url
-        List<WebElement> ele = driver.findElements(By.tagName("a"));
-        System.out.println("size:" + ele.size());
-        boolean isValid = false;
-        for (int i = 0; i < ele.size(); i++) {
-            // System.out.println(ele.get(i).getAttribute("href"));
-            isValid = getResponseCode(ele.get(i).getAttribute("href"));
-            if (isValid) {
-                System.out.println("ValidLinks:"
-                        + ele.get(i).getAttribute("href"));
-            } else {
-                System.out.println("InvalidLinks:"
-                        + ele.get(i).getAttribute("href"));
-            }
-        }
-
+        given().
+                when().
+                get("http://ergast.com/api/f1/2017/circuits.json").
+                then().
+                assertThat().
+                body("MRData.CircuitTable.Circuits.circuitId",hasSize(20));
     }
 
-    public static boolean getResponseCode(String urlString) {
-        boolean isValid = false;
-        try {
-            URL u = new URL(urlString);
-            HttpURLConnection h = (HttpURLConnection) u.openConnection();
-            h.setRequestMethod("GET");
-            h.connect();
-            System.out.println(h.getResponseCode());
-            if (h.getResponseCode() != 404) {
-                isValid = true;
-            }
-        } catch (Exception e) {
-
-        }
-        return isValid;
-    }
 
 }
 
