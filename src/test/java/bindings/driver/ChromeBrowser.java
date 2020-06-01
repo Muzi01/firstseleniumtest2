@@ -55,11 +55,11 @@ class ChromeBrowser {
     return new ChromeDriver(options);
   }
 
-  static WebDriver setupMobileDriver(String mobileName) {
+  static WebDriver setupMobileDriver(MobileType mobileName) {
     final ChromeOptions options = ChromeBrowser.getOptions();
     Map<String, String> mobileEmulation = new HashMap<>();
 
-    mobileEmulation.put("deviceName", MobileTypes.fromString(mobileName));
+    mobileEmulation.put("deviceName", MobileType.fromString(mobileName));
     options.setExperimentalOption("mobileEmulation", mobileEmulation);
     LOGGER.info("Chrome webdriver version for Mobile tests: "
         + WebDriverManager.chromedriver().getDownloadedVersion());

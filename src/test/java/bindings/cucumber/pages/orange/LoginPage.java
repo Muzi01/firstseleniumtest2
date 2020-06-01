@@ -1,13 +1,15 @@
 package bindings.cucumber.pages.orange;
 
-import bindings.driver.Driver;
+import bindings.driver.DriverFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 @StoryProxyComponent
-public class LoginPage extends Driver {
+public class LoginPage extends DriverFactory {
     private static final Logger LOGGER = LogManager.getLogger (LoginPage.class);
 
     @FindBy (id ="login-field"  )
@@ -29,6 +31,14 @@ public class LoginPage extends Driver {
             "\t\t\t\t\t\t\t\t\t\t\tZaloguj się\n" +
             "\t\t\t\t\t\t\t\t\t\t")
     public   WebElement  Zaloguj2;
+    public WebDriver driver;
+
+    public LoginPage (final DriverFactory driverFactory) {
+
+        PageFactory.initElements (driverFactory.getDriver(),this);
+
+    }
+
 
     public void email () {
         email.sendKeys("piotr.kramkowski@gmail.com");

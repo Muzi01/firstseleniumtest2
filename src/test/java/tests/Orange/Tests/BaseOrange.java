@@ -1,14 +1,19 @@
 package tests.Orange.Tests;
 
 import bindings.cucumber.pages.orange.LoginPage;
+import bindings.driver.DriverFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
-public class BaseOrange extends bindings.cucumber.pages.orange.LoginPage {
+public class BaseOrange extends LoginPage {
     private static final Logger LOGGER = LogManager.getLogger(BaseOrange.class);
-    public Object LoginPage;
-    private Object page;
+
+    public BaseOrange (DriverFactory driverFactory) {
+        super (driverFactory);
+    }
+
 
     @Test
     public void OrangeLogowanie() {

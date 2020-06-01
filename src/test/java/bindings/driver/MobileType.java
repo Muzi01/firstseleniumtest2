@@ -1,6 +1,6 @@
 package bindings.driver;
 
-public enum MobileTypes {
+public enum MobileType {
   /**
    * List of supported phones:
    * https://cs.chromium.org/chromium/src/chrome/test/chromedriver/chrome/mobile_device_list.cc
@@ -11,13 +11,13 @@ public enum MobileTypes {
 
   private String mobileName;
 
-  MobileTypes(String mobileName) {
+  MobileType (String mobileName) {
     this.mobileName = mobileName;
   }
 
-  public static String fromString(String mobileName) {
-    for (MobileTypes mobile : MobileTypes.values()) {
-      if (mobile.getMobileName().equalsIgnoreCase(mobileName)) {
+  public static String fromString(MobileType mobileName) {
+    for (MobileType mobile : MobileType.values()) {
+      if (mobile.getMobileName().equalsIgnoreCase(String.valueOf (mobileName))) {
         return mobile.getMobileName();
       }
     }

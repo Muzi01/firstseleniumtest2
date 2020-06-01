@@ -1,4 +1,8 @@
 package bindings.driver;
+import java.util.Objects;
+import java.util.concurrent.TimeUnit;
+
+import javax.annotation.PreDestroy;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.logging.log4j.LogManager;
@@ -10,23 +14,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import java.util.Objects;
-import java.util.concurrent.TimeUnit;
-
 public class DriverFactory {
   private static final Logger LOGGER = LogManager.getLogger(DriverFactory.class);
-  private static WebDriver driver;
-  private static Dimension resolution = new Dimension(1440, 900);
-  private static String browserType;
 
-  private DriverFactory() {
-    throw new IllegalStateException("This class should not be instantiated!");
-  }
+  private WebDriver driver;
+  private Dimension resolution = new Dimension(1440, 900);
+  private String browserType;
 
-  public static WebDriver getDriver() {
+  public WebDriver getDriver() {
     if (Objects.isNull(driver)) {
       browserType = System.getProperty("browser.type") == null ? "chrome"
-          : System.getProperty("browser.type").toLowerCase();
+              : System.getProperty("browser.type").toLowerCase();
       switch (browserType) {
         case "chrome":
           LOGGER.info("Starting Chrome driver");
@@ -48,48 +46,51 @@ public class DriverFactory {
     return driver;
   }
 
-  private static void setupFirefoxDriver() {
+  private void setupFirefoxDriver() {
     LOGGER.info("Starting Firefox driver");
     WebDriverManager.getInstance(FirefoxDriver.class).setup();
     driver = FirefoxBrowser.setupDriver();
   }
 
-  private static void setupDriverAdditionalParameters() {
+  private void setupDriverAdditionalParameters() {
     driver.manage().deleteAllCookies();
     driver.manage().window().setPosition(new Point(0, 0));
-    driver.manage().timeouts().implicitlyWait(DriverConfig.MAX_OBJECT_TIMEOUT, TimeUnit.SECONDS);
-    driver.manage().timeouts().pageLoadTimeout(DriverConfig.MAX_PAGE_LOAD_TIME, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(DriverConfig.MAX_OBJECT_TIMEOUT,
+            TimeUnit.SECONDS);
+    driver.manage().timeouts().pageLoadTimeout(DriverConfig.MAX_PAGE_LOAD_TIME,
+            TimeUnit.SECONDS);
   }
 
-  public static WebDriver getMobileChromeDriver(String mobileName) {
+  public WebDriver getMobileChromeDriver(final MobileType mobileType) {
     if (Objects.isNull(driver)) {
       LOGGER.info("Starting Mobile webdriver");
-      setupMobileChromeDriver(mobileName);
+      setupMobileChromeDriver(mobileType);
       setupDriverAdditionalParameters();
       LOGGER.info("Started Mobile driver");
     }
     return driver;
   }
 
-  private static void setupChromeDriver() {
+  private void setupChromeDriver() {
     WebDriverManager.getInstance(ChromeDriver.class).setup();
     driver = ChromeBrowser.setupDriver();
   }
 
-  private static void setupMobileChromeDriver(String mobileName) {
+  private void setupMobileChromeDriver(final MobileType mobileType) {
     WebDriverManager.getInstance(ChromeDriver.class).setup();
-    driver = ChromeBrowser.setupMobileDriver(mobileName);
+    driver = ChromeBrowser.setupMobileDriver(mobileType);
   }
 
-  public static void closeDriver() {
+  @PreDestroy
+  public void closeDriver() {
     if (driver != null) {
       driver.close();
       try {
         driver.quit();
-      } catch (NoSuchSessionException e) {
+      } catch (final NoSuchSessionException e) {
         if (browserType.equalsIgnoreCase("firefox")) {
           LOGGER
-              .warn("Probably Firefox https://bugzilla.mozilla.org/show_bug.cgi?id=1403510 error");
+                  .warn("Probably Firefox https://bugzilla.mozilla.org/show_bug.cgi?id=1403510 error");
         } else {
           LOGGER.error(e.getMessage());
         }
@@ -100,11 +101,11 @@ public class DriverFactory {
     }
   }
 
-  public static boolean isDriverInitialised() {
+  public boolean isDriverInitialised() {
     return driver != null;
   }
 
-  public static void changeScreenResolution(int width, int height) {
-    DriverFactory.resolution = new Dimension(width, height);
+  public void changeScreenResolution(final int width, final int height) {
+    resolution = new Dimension(width, height);
   }
 }
