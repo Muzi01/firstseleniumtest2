@@ -1,5 +1,6 @@
-package bindings.cucumber.pages.orange;
+package bindings.cucumber.funcjonal.pages.orange;
 
+import bindings.driver.Driver;
 import bindings.driver.DriverFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -33,11 +34,7 @@ public class LoginPage extends DriverFactory {
     public   WebElement  Zaloguj2;
     public WebDriver driver;
 
-    public LoginPage (final DriverFactory driverFactory) {
 
-        PageFactory.initElements (driverFactory.getDriver(),this);
-
-    }
 
 
     public void email () {
