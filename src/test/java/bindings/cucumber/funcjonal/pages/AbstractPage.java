@@ -249,10 +249,11 @@ public abstract class AbstractPage {
     /**
      * Perform default operation on field. Needed for Cucumber 'I fill form with values:' step
      *
+     * @param element
      */
 
 
-    public void clickUsingJavaScript(final WebElement element) {
+    public void clickUsingJavaScript(final String element) {
         jSExecutor.executeScriptForElement("arguments[0].click();", element);
     }
 
