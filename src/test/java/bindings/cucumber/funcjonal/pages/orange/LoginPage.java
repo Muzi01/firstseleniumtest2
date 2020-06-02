@@ -10,7 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 @StoryProxyComponent
-public class LoginPage extends DriverFactory {
+public class LoginPage extends DriverFactory  {
     private static final Logger LOGGER = LogManager.getLogger (LoginPage.class);
 
     @FindBy (id ="login-field"  )
@@ -32,12 +32,9 @@ public class LoginPage extends DriverFactory {
             "\t\t\t\t\t\t\t\t\t\t\tZaloguj się\n" +
             "\t\t\t\t\t\t\t\t\t\t")
     public   WebElement  Zaloguj2;
-    public WebDriver driver;
 
 
-
-
-    public void email () {
+    public void email (DriverFactory driverFactory) {
         email.sendKeys("piotr.kramkowski@gmail.com");
     }
     public void Kontakt() {

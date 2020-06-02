@@ -1,11 +1,11 @@
 package tests.legacy;
 
 import cucumber.api.CucumberOptions;
-import net.serenitybdd.cucumber.CucumberWithSerenity;
+
 import org.junit.runner.RunWith;
 
 // NOSONAR - this is an example of usage
-@RunWith(CucumberWithSerenity.class)
+
 @CucumberOptions (
         features = {"src/test/features"},
         glue = {"com.ipfdigital.core.cucumber", "com.pl.ipf.stepdefinitions",

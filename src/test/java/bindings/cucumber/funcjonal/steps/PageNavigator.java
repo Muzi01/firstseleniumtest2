@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
         }
 
         public void navigateToApplicationPage() {
-            driverFactory.getDriver().get("https://www.linkedin.com/feed/");
+            driverFactory.getDriver().get("https://www.orange.pl/zaloguj.phtml");
         }
 
     }
