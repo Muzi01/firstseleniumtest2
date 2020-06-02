@@ -253,7 +253,7 @@ public abstract class AbstractPage {
      */
 
 
-    public void clickUsingJavaScript(final String element) {
+    public void clickUsingJavaScript(final WebElement element) {
         jSExecutor.executeScriptForElement("arguments[0].click();", element);
     }
 
