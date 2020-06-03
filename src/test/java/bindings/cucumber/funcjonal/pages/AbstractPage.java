@@ -14,8 +14,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotInteractableException;
-import org.openqa.selenium.JavascriptException;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -24,10 +22,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 import bindings.cucumber.funcjonal.pages.orange.WaitStepsService;
 import bindings.cucumber.funcjonal.Utils;
-import bindings.cucumber.funcjonal.pages.JSExecutor;
 import bindings.driver.DriverConfig;
-import bindings.cucumber.funcjonal.pages.orange.WaitStepsService;
-
 
 
 public abstract class AbstractPage {
@@ -253,7 +248,7 @@ public abstract class AbstractPage {
      */
 
 
-    public void clickUsingJavaScript(final String element) {
+    public void clickUsingJavaScript(final WebElement element) {
         jSExecutor.executeScriptForElement("arguments[0].click();", element);
     }
 
