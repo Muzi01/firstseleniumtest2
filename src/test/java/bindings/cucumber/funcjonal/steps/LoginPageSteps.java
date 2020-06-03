@@ -9,8 +9,8 @@ public class LoginPageSteps {
 
 
 
-    @And ("^Fill email adrress to login$")
-    public void fillEmailAddressToLogin (LoginPage loginPage) {loginPage.loginProcess ();
+    @And ("^Customer is Login ito System$")
+    public void fillEmailAddressToLogin (final LoginPage loginPage,final DriverFactory driverFactory) {loginPage.loginProcess ();
 
 
         }

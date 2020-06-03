@@ -1,0 +1,24 @@
+package bindings.commons.automation.aio.rest.dto;
+
+public enum EmploymentDuration {
+  FROM_0_TO_3_MONTHS,
+  FROM_4_TO_12_MONTHS,
+  FROM_13_AND_MORE_MONTHS,
+  MONTHS_LESS_3,
+  MONTHS_1_4,
+  MONTHS_1_6,
+  MONTHS_3_12,
+  MONTHS_5_12,
+  MONTHS_7_12,
+  LESS_THAN_ONE_YEAR,
+  ONE_TO_THREE_YEARS,
+  MORE_THAN_THREE_YEARS,
+  YEARS_OVER_3,
+  YEARS_OVER_10,
+  YEARS_1_2,
+  YEARS_1_3,
+  YEARS_3_5,
+  YEARS_4_10,
+  YEARS_6_10,
+  MISSING
+}

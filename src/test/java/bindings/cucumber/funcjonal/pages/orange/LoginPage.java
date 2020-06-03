@@ -30,10 +30,10 @@ public class LoginPage  extends AbstractPage {
     @FindBy (id = PASSWORD_ID  )
     public WebElement password;
 
-    @FindBy (id = LOGINBUTTON_ID  )
+    @FindBy (id = "loginButton"  )
     public WebElement loginButton;
 
-    @FindBy (linkText =DALEJ_TEXT)
+    @FindBy (linkText ="Dalej")
     public   WebElement  Dalej;
 
     @FindBy (linkText = ZALOGUJ_TEXT)
@@ -53,11 +53,11 @@ public class LoginPage  extends AbstractPage {
 
     public void fillLogin (){ sendKeys (EMAIL_ID,LOGIN); }
     public void clickDalejButton (){
-        clickUsingJavaScript (DALEJ_TEXT); }
+        clickUsingJavaScript (Dalej); }
 
     public void fillPassword (){ sendKeys (PASSWORD_ID,PASSWORD); }
 
-    public void clickLoginButton (){clickUsingJavaScript (LOGINBUTTON_ID);}
+    public void clickLoginButton (){clickUsingJavaScript (loginButton);}
 
 
     public void loginProcess (){
