@@ -1,0 +1,226 @@
+Index: src/test/java/com/swtestacademy/webdriver/FirstAutomationTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.swtestacademy.webdriver;\n\n//Info: When you write your code IntelliJ automatically adds required classes\n//Also you can select and add required classes by pressing ALT+Enter then select related class\n\nimport org.junit.Assert;\nimport org.junit.Test;\nimport org.openqa.selenium.WebDriver;\nimport org.openqa.selenium.chrome.ChromeDriver;\n\n//import org.openqa.selenium.firefox.FirefoxDriver;\n\n/**\n * Created by ONUR BASKIRT on 26.08.2015.\n */\npublic class FirstAutomationTest {\n\n\n\n    //We should add @Test annotation that JUnit will run below method\n    @Test\n    //Start to write our test method. It should ends with \"Test\"\n    public void firefoxTest(){\n        System.setProperty(\"webdriver.chrome.driver\", \"C:\\\\1\\\\chromedriver.exe\");\n        //Step 1- Driver Instantiation: Instantiate driver object as FirefoxDriver\n        WebDriver driver = new ChromeDriver();\n\n        //Step 2- Navigation: Open a website\n        driver.navigate().to(\"https://www.teknosa.com/\");\n\n        //Step 3- Assertion: Check its title is correct\n        //assertEquals method Parameters: Message, Expected Value, Actual Value\n        Assert.assertEquals(\"Title check failed!\", \"Teknosa Alışveriş Sitesi - Herkes İçin Teknoloji\", driver.getTitle());\n\n        //Step 4- Close Driver\n        driver.close();\n\n        //Step 5- Quit Driver\n        driver.quit();\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/com/swtestacademy/webdriver/FirstAutomationTest.java	(revision 6c4bfa291f7cc9c05ffd67ae4d075cb793ea9956)
++++ src/test/java/com/swtestacademy/webdriver/FirstAutomationTest.java	(date 1587826780106)
+@@ -3,6 +3,7 @@
+ //Info: When you write your code IntelliJ automatically adds required classes
+ //Also you can select and add required classes by pressing ALT+Enter then select related class
+ 
++import bindings.BaseTestClass;
+ import org.junit.Assert;
+ import org.junit.Test;
+ import org.openqa.selenium.WebDriver;
+@@ -13,20 +14,18 @@
+ /**
+  * Created by ONUR BASKIRT on 26.08.2015.
+  */
+-public class FirstAutomationTest {
++public class FirstAutomationTest extends BaseTestClass {
++
++
+ 
+ 
+ 
+     //We should add @Test annotation that JUnit will run below method
+-    @Test
++@Test
+     //Start to write our test method. It should ends with "Test"
+     public void firefoxTest(){
+-        System.setProperty("webdriver.chrome.driver", "C:\\1\\chromedriver.exe");
+-        //Step 1- Driver Instantiation: Instantiate driver object as FirefoxDriver
+-        WebDriver driver = new ChromeDriver();
+-
+-        //Step 2- Navigation: Open a website
+-        driver.navigate().to("https://www.teknosa.com/");
++       driver.get("https://www.teknosa.com/");
++     //   driver.navigate().to("https://www.teknosa.com/");
+ 
+         //Step 3- Assertion: Check its title is correct
+         //assertEquals method Parameters: Message, Expected Value, Actual Value
+Index: src/test/java/bindings/BaseTestClass.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package bindings;\n\nimport io.github.bonigarcia.wdm.ChromeDriverManager;\nimport io.github.bonigarcia.wdm.WebDriverManager;\nimport org.junit.After;\nimport org.junit.Before;\nimport org.junit.BeforeClass;\nimport org.openqa.selenium.WebDriver;\nimport org.openqa.selenium.chrome.ChromeDriver;\nimport org.openqa.selenium.chrome.ChromeOptions;\nimport org.openqa.selenium.support.ui.WebDriverWait;\nimport org.testng.annotations.AfterMethod;\nimport org.testng.annotations.AfterSuite;\nimport org.testng.annotations.BeforeMethod;\nimport org.testng.annotations.BeforeSuite;\n\nimport java.util.concurrent.TimeUnit;\n\n public class BaseTestClass {\n\n    private WebDriver driver;\n\n    @BeforeSuite\n    public void beforeSuite() {\n        System.setProperty(\"headless\", \"false\"); // You can set this property elsewhere\n        String headless = System.getProperty(\"headless\");\n\n        ChromeDriverManager.chromedriver();\n        if (\"true\".equals(headless)) {\n            ChromeOptions chromeOptions = new ChromeOptions();\n            chromeOptions.addArguments(\"--headless\");\n            driver = new ChromeDriver(chromeOptions);\n        } else {\n            driver = new ChromeDriver();\n        }\n    }\n\n    @AfterSuite\n    public void afterSuite() {\n        if (null != driver) {\n            driver.close();\n            driver.quit();\n        }\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/bindings/BaseTestClass.java	(revision 6c4bfa291f7cc9c05ffd67ae4d075cb793ea9956)
++++ src/test/java/bindings/BaseTestClass.java	(date 1587826760341)
+@@ -18,7 +18,8 @@
+ 
+  public class BaseTestClass {
+ 
+-    private WebDriver driver;
++    public
++    WebDriver driver;
+ 
+     @BeforeSuite
+     public void beforeSuite() {
+Index: src/test/java/com/swtestacademy/webdriver/nowa_wp.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.swtestacademy.webdriver;\n\nimport org.junit.After;\nimport org.junit.Before;\nimport org.junit.Test;\nimport org.openqa.selenium.*;\nimport org.openqa.selenium.chrome.ChromeDriver;\n\nimport java.util.concurrent.TimeUnit;\n\nimport static org.junit.Assert.fail;\n\npublic class nowa_wp {\n    private WebDriver driver;\n    private String baseUrl;\n    private boolean acceptNextAlert = true;\n    private StringBuffer verificationErrors = new StringBuffer ( );\n\n    @Before\n\n    public void setUp( ) {\n        System.setProperty ( \"webdriver.chrome.driver\" , \"C:\\\\1\\\\chromedriver.exe\" );\n        driver = new ChromeDriver ( );\n        baseUrl = \"https://www.katalon.com/\";\n        driver.manage ( ).timeouts ( ).implicitlyWait ( 1 , TimeUnit.SECONDS );\n    }\n\n    @Test\n    public void testUntitledTestCase( ) {\n        driver.get ( \"https://www.wp.pl/\" );\n        driver.findElement ( By.linkText ( \"Serwisy\" ) ).click ( );\n        driver.findElement ( By.linkText ( \"Ranking lekarzy\" ) ).click ( );\n        driver.findElement ( By.linkText ( \"Prof. dr hab. Jarosław Leszczyszyn\" ) ).click ( );\n        driver.findElement ( By.xpath ( \"(.//*[normalize-space(text()) and normalize-space(.)='ZAKTUALIZUJ SWÓJ KALENDARZ'])[1]/following::input[2]\" ) ).click ( );\n        driver.findElement ( By.xpath ( \"(.//*[normalize-space(text()) and normalize-space(.)='ZAKTUALIZUJ SWÓJ KALENDARZ'])[1]/following::input[2]\" ) ).clear ( );\n        driver.findElement ( By.xpath ( \"(.//*[normalize-space(text()) and normalize-space(.)='ZAKTUALIZUJ SWÓJ KALENDARZ'])[1]/following::input[2]\" ) ).sendKeys ( \"wrocław\" );\n        driver.findElement ( By.xpath ( \"(.//*[normalize-space(text()) and normalize-space(.)='ZAKTUALIZUJ SWÓJ KALENDARZ'])[1]/following::button[1]\" ) ).click ( );\n        driver.findElement ( By.linkText ( \"Maciej NowickiZweryfikowany profil - informacje o lekarzu zostały sprawdzone i potwierdzone przez pracowników abcZdrowie\" ) ).click ( );\n        driver.findElement ( By.linkText ( \"pytania do lekarzy\" ) ).click ( );\n        // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_1 | ]]\n        driver.findElement ( By.linkText ( \"Czy w podanej sytuacji jest konieczność wykonania testu na HPV?\" ) ).click ( );\n        driver.findElement ( By.linkText ( \"Kalkulatory\" ) ).click ( );\n        driver.findElement ( By.linkText ( \"Aktywność fizyczna\" ) ).click ( );\n        driver.findElement ( By.linkText ( \"Ciąża i dziecko\" ) ).click ( );\n        driver.findElement ( By.linkText ( \"Fora i grupy wsparcia\" ) ).click ( );\n        driver.findElement ( By.id ( \"sqinput\" ) ).click ( );\n        driver.findElement ( By.id ( \"sqinput\" ) ).clear ( );\n        driver.findElement ( By.id ( \"sqinput\" ) ).sendKeys ( \"Captivity\" );\n        driver.findElement ( By.xpath ( \"(.//*[normalize-space(text()) and normalize-space(.)='Zaloguj'])[1]/following::button[1]\" ) ).click ( );\n        driver.findElement ( By.linkText ( \"Ważne tematy\" ) ).click ( );\n        driver.findElement ( By.xpath ( \"(.//*[normalize-space(text()) and normalize-space(.)='Doppelherz - Bo szkoda życia na pauzę'])[1]/following::span[1]\" ) ).click ( );\n        driver.findElement ( By.xpath ( \"(.//*[normalize-space(text()) and normalize-space(.)='Dolegliwości jelitowe a kwas masłowy'])[1]/following::span[1]\" ) ).click ( );\n        driver.findElement ( By.xpath ( \"(.//*[normalize-space(text()) and normalize-space(.)='REKLAMA'])[2]/following::span[1]\" ) ).click ( );\n    }\n\n    @After\n    public void tearDown( ) {\n        driver.quit ( );\n        String verificationErrorString = verificationErrors.toString ( );\n        if (!\"\".equals ( verificationErrorString )) {\n            fail ( verificationErrorString );\n        }\n    }\n\n    private boolean isElementPresent(By by) {\n        try {\n            driver.findElement ( by );\n            return true;\n        } catch (NoSuchElementException e) {\n            return false;\n        }\n    }\n\n    private boolean isAlertPresent( ) {\n        try {\n            driver.switchTo ( ).alert ( );\n            return true;\n        } catch (NoAlertPresentException e) {\n            return false;\n        }\n    }\n\n    private String closeAlertAndGetItsText( ) {\n        try {\n            Alert alert = driver.switchTo ( ).alert ( );\n            String alertText = alert.getText ( );\n            if (acceptNextAlert) {\n                alert.accept ( );\n            } else {\n                alert.dismiss ( );\n            }\n            return alertText;\n        } finally {\n            acceptNextAlert = true;\n        }\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/com/swtestacademy/webdriver/nowa_wp.java	(revision 6c4bfa291f7cc9c05ffd67ae4d075cb793ea9956)
++++ src/test/java/com/swtestacademy/webdriver/nowa_wp.java	(date 1587824593912)
+@@ -1,5 +1,6 @@
+ package com.swtestacademy.webdriver;
+ 
++import bindings.BaseTestClass;
+ import org.junit.After;
+ import org.junit.Before;
+ import org.junit.Test;
+@@ -10,20 +11,8 @@
+ 
+ import static org.junit.Assert.fail;
+ 
+-public class nowa_wp {
+-    private WebDriver driver;
+-    private String baseUrl;
+-    private boolean acceptNextAlert = true;
+-    private StringBuffer verificationErrors = new StringBuffer ( );
++public class nowa_wp extends BaseTestClass {
+ 
+-    @Before
+-
+-    public void setUp( ) {
+-        System.setProperty ( "webdriver.chrome.driver" , "C:\\1\\chromedriver.exe" );
+-        driver = new ChromeDriver ( );
+-        baseUrl = "https://www.katalon.com/";
+-        driver.manage ( ).timeouts ( ).implicitlyWait ( 1 , TimeUnit.SECONDS );
+-    }
+ 
+     @Test
+     public void testUntitledTestCase( ) {
+@@ -53,45 +42,4 @@
+         driver.findElement ( By.xpath ( "(.//*[normalize-space(text()) and normalize-space(.)='REKLAMA'])[2]/following::span[1]" ) ).click ( );
+     }
+ 
+-    @After
+-    public void tearDown( ) {
+-        driver.quit ( );
+-        String verificationErrorString = verificationErrors.toString ( );
+-        if (!"".equals ( verificationErrorString )) {
+-            fail ( verificationErrorString );
+-        }
+-    }
+-
+-    private boolean isElementPresent(By by) {
+-        try {
+-            driver.findElement ( by );
+-            return true;
+-        } catch (NoSuchElementException e) {
+-            return false;
+-        }
+-    }
+-
+-    private boolean isAlertPresent( ) {
+-        try {
+-            driver.switchTo ( ).alert ( );
+-            return true;
+-        } catch (NoAlertPresentException e) {
+-            return false;
+-        }
+-    }
+-
+-    private String closeAlertAndGetItsText( ) {
+-        try {
+-            Alert alert = driver.switchTo ( ).alert ( );
+-            String alertText = alert.getText ( );
+-            if (acceptNextAlert) {
+-                alert.accept ( );
+-            } else {
+-                alert.dismiss ( );
+-            }
+-            return alertText;
+-        } finally {
+-            acceptNextAlert = true;
+-        }
+-    }
+ }
+Index: src/test/java/bindings/SeleniumTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/bindings/SeleniumTest.java	(date 1587824593921)
++++ src/test/java/bindings/SeleniumTest.java	(date 1587824593921)
+@@ -0,0 +1,69 @@
++package bindings;
++
++import java.util.concurrent.TimeUnit;
++
++import io.github.bonigarcia.wdm.WebDriverManager;
++import org.junit.After;
++import org.junit.AfterClass;
++import org.junit.Assert;
++import org.junit.Before;
++import org.junit.BeforeClass;
++import org.junit.Test;
++import org.openqa.selenium.By;
++import org.openqa.selenium.WebDriver;
++import org.openqa.selenium.WebElement;
++import org.openqa.selenium.chrome.ChromeDriver;
++import org.openqa.selenium.firefox.FirefoxDriver;
++
++public class SeleniumTest {
++    private WebDriver driver;
++    WebElement element;
++    @BeforeClass
++    public static void setupClass() {
++        WebDriverManager.chromedriver().setup();
++    }
++    @Before
++    public void setupTest() {
++        driver = new ChromeDriver();
++    }
++    @After
++    public void teardown() {
++        if (driver != null) {
++            driver.quit();
++        }
++    }
++    @Test
++    public void valid_UserCredential(){
++
++        System.out.println("Starting test " + new Object(){}.getClass().getEnclosingMethod().getName());
++        driver.get("http://www.store.demoqa.com");
++        driver.findElement(By.xpath(".//*[@id='account']/a")).click();
++        driver.findElement(By.id("log")).sendKeys("testuser_3");
++        driver.findElement(By.id("pwd")).sendKeys("Test@123");
++        driver.findElement(By.id("login")).click();
++        try{
++            element = driver.findElement (By.xpath(".//*[@id='account_logout']/a"));
++        }catch (Exception e){
++        }
++        Assert.assertNotNull(element);
++        System.out.println("Ending test " + new Object(){}.getClass().getEnclosingMethod().getName());
++    }
++
++    @Test
++    public void inValid_UserCredential()
++    {
++        System.out.println("Starting test " + new Object(){}.getClass().getEnclosingMethod().getName());
++        driver.get("http://www.store.demoqa.com");
++        driver.findElement(By.linkText("Dismiss")).click();
++        driver.findElement(By.linkText("My Account")).click();
++        driver.findElement(By.id("log")).sendKeys("testuser");
++        driver.findElement(By.id("pwd")).sendKeys("Test@123");
++        driver.findElement(By.id("login")).click();
++        try{
++            element = driver.findElement (By.xpath(".//*[@id='account_logout']/a"));
++        }catch (Exception e){
++        }
++        Assert.assertNotNull(element);
++        System.out.println("Ending test " + new Object(){}.getClass().getEnclosingMethod().getName());
++    }}
++
+diff --git src/test/java/com/swtestacademy/webdriver/stepdefinitions.java src/test/java/com/swtestacademy/webdriver/stepdefinitions.java
+new file mode 100644

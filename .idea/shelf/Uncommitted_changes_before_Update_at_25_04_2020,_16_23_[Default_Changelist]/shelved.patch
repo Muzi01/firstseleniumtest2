@@ -1,0 +1,41 @@
+Index: src/test/java/bindings/BaseTestClass.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package bindings;\n\nimport io.github.bonigarcia.wdm.WebDriverManager;\nimport org.junit.After;\nimport org.junit.Before;\nimport org.junit.BeforeClass;\nimport org.openqa.selenium.WebDriver;\nimport org.openqa.selenium.chrome.ChromeDriver;\nimport org.openqa.selenium.support.ui.WebDriverWait;\nimport org.testng.annotations.AfterMethod;\nimport org.testng.annotations.BeforeMethod;\nimport org.testng.annotations.BeforeSuite;\n\nimport java.util.concurrent.TimeUnit;\n\npublic class BaseTestClass {\n\n     WebDriver driver;\n     WebDriverWait wait;\n\n    @BeforeMethod\n    public void startUpBrowser() {\n        WebDriverManager.chromedriver().setup();\n\n        driver = new ChromeDriver();\n        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);\n        driver.manage().window().fullscreen();\n\n\n    }\n    @AfterMethod (alwaysRun = true)\n    public void teardown() {\n        if (driver != null) {\n            driver.quit();\n        }\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/bindings/BaseTestClass.java	(revision 958905b5157cf2cdb88c799abf814c66898bde1c)
++++ src/test/java/bindings/BaseTestClass.java	(date 1586793555706)
+@@ -13,25 +13,18 @@
+ 
+ import java.util.concurrent.TimeUnit;
+ 
+-public class BaseTestClass {
++public abstract class BaseTestClass {
++ protected   WebDriver driver;
+ 
+-     WebDriver driver;
+-     WebDriverWait wait;
+ 
+-    @BeforeMethod
+-    public void startUpBrowser() {
+-        WebDriverManager.chromedriver().setup();
+-
++     public void setDriver() {
++       WebDriverManager.chromedriver().setup();
++        ChromeDriver
+         driver = new ChromeDriver();
+         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+         driver.manage().window().fullscreen();
+ 
+ 
+-    }
+-    @AfterMethod (alwaysRun = true)
+-    public void teardown() {
+-        if (driver != null) {
+-            driver.quit();
+-        }
++
+     }
+ }
