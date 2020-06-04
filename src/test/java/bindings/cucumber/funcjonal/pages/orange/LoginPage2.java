@@ -57,7 +57,7 @@ public class LoginPage2 extends DriverFactory {
         getDriver ().findElement (By.id ("login-box__button")).click ();
         getDriver ().findElement (By.id ("password")).sendKeys ("Pioneer123!");
         getDriver ().findElement (By.xpath ("//button[@id='loginButton']/span")).click ();
-        getDriver ().quit ();
+        ;
 
 
 

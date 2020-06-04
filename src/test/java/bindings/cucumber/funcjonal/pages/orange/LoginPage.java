@@ -24,16 +24,16 @@ public class LoginPage  extends AbstractPage {
     private static final String LOGIN = "piotr.kramkowski@gmail.com";
     private static final String PASSWORD = "Pioneer123!";
 
-    @FindBy (id = EMAIL_ID  )
+    @FindBy (id = "login-field"  )
     public WebElement email;
 
     @FindBy (id = PASSWORD_ID  )
     public WebElement password;
 
-    @FindBy (id = "loginButton"  )
-    public WebElement loginButton;
+    @FindBy (xpath ="//button[@id='loginButton']/span")
+    public WebElement Dalej2;
 
-    @FindBy (linkText ="Dalej")
+    @FindBy (id ="login-box__button")
     public   WebElement  Dalej;
 
     @FindBy (linkText = ZALOGUJ_TEXT)
@@ -51,20 +51,26 @@ public class LoginPage  extends AbstractPage {
         PageFactory.initElements(driverFactory.getDriver(), this);
     }
 
-    public void fillLogin (){ sendKeys (EMAIL_ID,LOGIN); }
+    public void fillLogin (){
+        sendKeys (email,"piotr.kramkowski@gmail.com");
+        clickUsingJavaScript (Dalej);
+    }
     public void clickDalejButton (){
         clickUsingJavaScript (Dalej); }
 
-    public void fillPassword (){ sendKeys (PASSWORD_ID,PASSWORD); }
+    public void fillPassword (){
+        sendKeys (PASSWORD_ID,PASSWORD);
+        clickUsingJavaScript (Dalej2);
+    }
 
-    public void clickLoginButton (){clickUsingJavaScript (loginButton);}
+
 
 
     public void loginProcess (){
         fillLogin ();
         clickDalejButton ();
         fillPassword ();
-        clickLoginButton ();
+
     }
 
 

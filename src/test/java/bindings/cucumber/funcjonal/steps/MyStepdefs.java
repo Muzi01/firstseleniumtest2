@@ -69,4 +69,13 @@ public class MyStepdefs {
     @And ("He is login to System")
     public void heIsLoginToSystem () throws Throwable { loginPage2.test ();
     }
+
+    @And ("^Fill His username$")
+    public void fillHisUsername () {loginPage.fillLogin ();
+
+    }
+
+    @And ("^Fill His password$")
+    public void fillHisPassword () {loginPage.fillPassword ();
+    }
 }
