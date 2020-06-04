@@ -9,7 +9,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-
+import tests.legacy.GetRequestTest;
 
 
 public class MyStepdefs {
@@ -20,12 +20,14 @@ public class MyStepdefs {
     private final LinkedInLoginPage linkedInLoginPage;
     private final WaitStepsService waitStepsService;
     private final LoginPage2 loginPage2 ;
-    public MyStepdefs (final PageNavigator pageNavigator, LoginPage loginPage, LinkedInLoginPage linkedInLoginPage, WaitStepsService waitStepsService, LoginPage2 loginPage2) {
+    private final GetRequestTest getRequestTest;
+    public MyStepdefs(final PageNavigator pageNavigator, LoginPage loginPage, LinkedInLoginPage linkedInLoginPage, WaitStepsService waitStepsService, LoginPage2 loginPage2, GetRequestTest getRequestTest) {
         this.pageNavigator = pageNavigator;
         this.loginPage = loginPage;
         this.linkedInLoginPage = linkedInLoginPage;
         this.waitStepsService = waitStepsService;
         this.loginPage2 = loginPage2;
+        this.getRequestTest = getRequestTest;
     }
 
 
@@ -77,5 +79,9 @@ public class MyStepdefs {
 
     @And ("^Fill His password$")
     public void fillHisPassword () {loginPage.fillPassword ();
+    }
+
+    @Given("^System checks links on tvn(\\d+)$")
+    public void systemChecksLinksOnTvn(int arg0) {getRequestTest.checkBrokenLink1s();
     }
 }
