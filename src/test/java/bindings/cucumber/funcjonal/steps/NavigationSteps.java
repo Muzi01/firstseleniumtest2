@@ -14,4 +14,9 @@ public class NavigationSteps {
         pageNavigator.navigateToApplicationPage();
     }
 
+
+    @Given ("^User is on linkedin login page$")
+    public void userIsOnLinkedinLoginPage () {
+        pageNavigator.navigatetoLinkedin ();
+    }
 }
