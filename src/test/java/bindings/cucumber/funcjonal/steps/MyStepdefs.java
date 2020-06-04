@@ -82,6 +82,6 @@ public class MyStepdefs {
     }
 
     @Given("^System checks links on tvn(\\d+)$")
-    public void systemChecksLinksOnTvn(int arg0) {getRequestTest.checkBrokenLink1s();
+    public void systemChecksLinksOnTvn(int arg0) {getRequestTest.CheckTvn();
     }
 }

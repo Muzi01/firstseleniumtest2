@@ -17,7 +17,7 @@ import static io.restassured.RestAssured.*;
 public class GetRequestTest extends DriverFactory {
 
     @Test
-    public void checkBrokenLink1s() {
+    public void CheckTvn() {
 
 
 
