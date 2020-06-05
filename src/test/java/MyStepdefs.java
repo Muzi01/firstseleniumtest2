@@ -22,6 +22,6 @@ public class MyStepdefs {
 
     @Then ("^I should see the autor name as \"([^\"]*)\"$")
     public void iShouldSeeTheAutorNameAs (String arg0) throws Throwable {
-      then.
+
     }
 }
