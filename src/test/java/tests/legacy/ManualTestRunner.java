@@ -1,12 +1,10 @@
 package tests.legacy;
 
-import cucumber.api.CucumberOptions;
-
-import org.junit.runner.RunWith;
+import io.cucumber.junit.CucumberOptions;
 
 // NOSONAR - this is an example of usage
 
-@CucumberOptions (
+@CucumberOptions(
         features = {"src/test/features"},
         glue = {"com.ipfdigital.core.cucumber", "com.pl.ipf.stepdefinitions",
                 "com.ipfdigital.steps", "com.ipfdigital.screenplay"},

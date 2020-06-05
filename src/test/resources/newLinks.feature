@@ -9,10 +9,10 @@ Feature:  test
   Scenario: Test links on wp.pl
     Given System Check lins on  wp.pl
   @smoke
-  Scenario: Scenario: Test links on happipozyczki.pl
+  Scenario: Test links on happipozyczki.pl
     Given System Check lins on  happipozyczki
   @smoke
-  Scenario: Scenario: Test links on creditea.es
+  Scenario: Test links on creditea.es
     Given System Check lins on  creditea es
   @smoke
   Scenario: Scenario: Test links on credit24.lt

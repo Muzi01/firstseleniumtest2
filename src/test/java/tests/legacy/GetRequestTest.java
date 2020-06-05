@@ -1,9 +1,7 @@
 package tests.legacy;
 
-import bindings.driver.Driver;
 import bindings.driver.DriverFactory;
-import org.junit.After;
-import org.junit.Test;
+import io.restassured.response.Response;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -11,12 +9,11 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import io.restassured.response.Response;
-import static io.restassured.RestAssured.*;
+import static io.restassured.RestAssured.given;
 
 public class GetRequestTest extends DriverFactory {
 
-    @Test
+
     public void CheckTvn() {
 
 
@@ -58,7 +55,6 @@ public class GetRequestTest extends DriverFactory {
 
     }
 
-    @Test
     public void Checkwp() {
 
 
@@ -100,7 +96,7 @@ public class GetRequestTest extends DriverFactory {
 
     }
 
-    @Test
+
     public void happiPL() {
 
 
@@ -141,7 +137,7 @@ public class GetRequestTest extends DriverFactory {
         }
 
     }
-    @Test
+
     public void crediteaEs() {
 
 
@@ -188,10 +184,8 @@ public class GetRequestTest extends DriverFactory {
 
 
         getDriver().get("https://credit24.lt/");
-
         List<String> hrefs = new ArrayList<String>();
         List<WebElement> anchors = getDriver().findElements(By.tagName("a"));
-
         for (WebElement anchor : anchors) {
 
             if ( anchor.getAttribute("href") != null )
@@ -218,6 +212,7 @@ public class GetRequestTest extends DriverFactory {
                 System.out.println("URL: " + href + " returned " + e.getMessage());
 
             }
+            closeDriver();
 
         }
 

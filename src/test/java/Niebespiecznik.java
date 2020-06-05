@@ -1,6 +1,6 @@
 import bindings.driver.Driver;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -19,12 +19,12 @@ public class Niebespiecznik extends Driver {
     private WebElement Szkolenia;
 
 
-    @Given ("^I am on Niebespiecznik  page$")
+    @Given("^I am on Niebespiecznik  page$")
     public void I_am_on_Niebespiecznik_page () throws Throwable {
         driver.get ("https://niebespiecznik.pl/");
     }
 
-    @And ("^I click niebespiecznik button$")
+    @And("^I click niebespiecznik button$")
     public void I_click_niebespiecznik_button () throws Throwable {
         Nienespiecznik.click ();
     }

@@ -3,9 +3,7 @@ package bindings.cucumber.funcjonal.pages.niebespiecznik;
 import bindings.cucumber.funcjonal.pages.AbstractPage;
 import bindings.cucumber.funcjonal.pages.orange.StoryProxyComponent;
 import bindings.driver.DriverFactory;
-
-import cucumber.api.java.en.And;
-
+import io.cucumber.java.en.And;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -33,7 +31,7 @@ public void clickNiebespiecznik (){
 
 }
 
-    @And ("^I click niebespiecznik button$")
+    @And("^I click niebespiecznik button$")
     public void I_click_niebespiecznik_button () throws Throwable {
         Nienespiecznik.click ();
     }

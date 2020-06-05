@@ -1,6 +1,6 @@
 package bindings.cucumber.funcjonal.steps;
 
-import cucumber.api.java.en.Given;
+import io.cucumber.java.en.Given;
 
 public class NavigationSteps {
 
@@ -9,7 +9,7 @@ public class NavigationSteps {
         this.pageNavigator = pageNavigator;
     }
 
-    @Given ("^Customer is on application page$")
+    @Given("^Customer is on application page$")
     public void navigateToApplicationPage() {
         pageNavigator.navigateToApplicationPage();
     }

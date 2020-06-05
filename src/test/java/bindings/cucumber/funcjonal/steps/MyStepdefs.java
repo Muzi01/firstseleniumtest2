@@ -5,10 +5,10 @@ import bindings.cucumber.funcjonal.pages.orange.LoginPage;
 import bindings.cucumber.funcjonal.pages.orange.LoginPage2;
 import bindings.cucumber.funcjonal.pages.orange.WaitStepsService;
 
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import tests.legacy.GetRequestTest;
 
 
@@ -34,12 +34,12 @@ public class MyStepdefs {
 
 
 
-    @When ("^I wait for element \"(.*)\"$")
+    @When("^I wait for element \"(.*)\"$")
     public void waitForElement(final String fieldName) {
         this.waitStepsService.waitForElement(fieldName);
     }
 
-    @Then ("Fill email address to login")
+    @Then("Fill email address to login")
     public void fillEmailAddressToLogin  () throws  Throwable {loginPage.loginProcess ();
     }
 
@@ -48,7 +48,7 @@ public class MyStepdefs {
     public void heFillsLoginBox () throws Throwable{loginPage.fillLogin ();
     }
 
-    @And ("Click next button")
+    @And("Click next button")
     public void clickNextButton () throws Throwable{loginPage.clickDalejButton ();
     }
 
@@ -65,7 +65,7 @@ public class MyStepdefs {
     public void userIsLoginToLinkedIn () {linkedInLoginPage.loginProcessLinked ();
     }
 
-    @Given ("^User fill login$")
+    @Given("^User fill login$")
     public void userFillLogin () throws Throwable {this.linkedInLoginPage.costam ();
     }
     @And ("He is login to System")
