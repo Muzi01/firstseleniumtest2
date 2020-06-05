@@ -9,8 +9,4 @@ Feature: login orange
       And  Fill His username
       And  Fill His password
 
-  Scenario: Links in TVN 24
-    Given System checks links on tvn24
-
-
 

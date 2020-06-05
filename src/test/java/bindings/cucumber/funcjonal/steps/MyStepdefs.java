@@ -84,4 +84,20 @@ public class MyStepdefs {
     @Given("^System checks links on tvn(\\d+)$")
     public void systemChecksLinksOnTvn(int arg0) {getRequestTest.CheckTvn();
     }
+
+    @Given ("^System Check lins on  wp\\.pl$")
+    public void systemCheckLinsOnWpPl () {getRequestTest.Checkwp ();
+    }
+
+    @Given ("^System Check lins on  happipozyczki$")
+    public void systemCheckLinsOnHappipozyczki () {getRequestTest.happiPL ();
+    }
+
+    @Given ("^System Check lins on  creditea es$")
+    public void systemCheckLinsOnCrediteaEs () {getRequestTest.crediteaEs ();
+    }
+
+    @Given ("^System Check lins on  credit(\\d+)\\.lt$")
+    public void systemCheckLinsOnCreditLt (int arg0) {getRequestTest.credit24LT ();
+    }
 }

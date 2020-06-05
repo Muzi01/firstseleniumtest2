@@ -10,7 +10,7 @@ import cucumber.api.junit.Cucumber;
         plugin = {"html:reports/cucumber-html-report",
                 "json:reports/cucumber.json",
                 "pretty"},
-        tags = {"@test"},
+        tags = {"@links"},
         features = {"src/test/resources"},
         glue = {"bindings.cucumber.functional"}
 )

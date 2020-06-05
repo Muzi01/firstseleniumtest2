@@ -58,6 +58,172 @@ public class GetRequestTest extends DriverFactory {
 
     }
 
+    @Test
+    public void Checkwp() {
+
+
+
+
+        getDriver().get("http://wp.pl/");
+
+        List<String> hrefs = new ArrayList<String>();
+        List<WebElement> anchors = getDriver().findElements(By.tagName("a"));
+
+        for (WebElement anchor : anchors) {
+
+            if ( anchor.getAttribute("href") != null )
+                hrefs.add(anchor.getAttribute("href"));
+
+        }
+
+        for (String href : hrefs) {
+
+            try {
+
+                int responseCode = returnStatusCode(new URL(href));
+                if ( responseCode != 200 ) {
+                    System.out.println("The broken Link is " + href);
+
+                }
+                else {
+
+                    System.out.println("The working Link is " + href);
+
+                }
+            }
+            catch (Exception e) {
+                System.out.println("URL: " + href + " returned " + e.getMessage());
+
+            }
+
+        }
+
+    }
+
+    @Test
+    public void happiPL() {
+
+
+
+
+        getDriver().get("https://www.hapipozyczki.pl/");
+
+        List<String> hrefs = new ArrayList<String>();
+        List<WebElement> anchors = getDriver().findElements(By.tagName("a"));
+
+        for (WebElement anchor : anchors) {
+
+            if ( anchor.getAttribute("href") != null )
+                hrefs.add(anchor.getAttribute("href"));
+
+        }
+
+        for (String href : hrefs) {
+
+            try {
+
+                int responseCode = returnStatusCode(new URL(href));
+                if ( responseCode != 200 ) {
+                    System.out.println("The broken Link is " + href);
+
+                }
+                else {
+
+                    System.out.println("The working Link is " + href);
+
+                }
+            }
+            catch (Exception e) {
+                System.out.println("URL: " + href + " returned " + e.getMessage());
+
+            }
+
+        }
+
+    }
+    @Test
+    public void crediteaEs() {
+
+
+
+
+        getDriver().get("https://www.creditea.es/");
+
+        List<String> hrefs = new ArrayList<String>();
+        List<WebElement> anchors = getDriver().findElements(By.tagName("a"));
+
+        for (WebElement anchor : anchors) {
+
+            if ( anchor.getAttribute("href") != null )
+                hrefs.add(anchor.getAttribute("href"));
+
+        }
+
+        for (String href : hrefs) {
+
+            try {
+
+                int responseCode = returnStatusCode(new URL(href));
+                if ( responseCode != 200 ) {
+                    System.out.println("The broken Link is " + href);
+
+                }
+                else {
+
+                    System.out.println("The working Link is " + href);
+
+                }
+            }
+            catch (Exception e) {
+                System.out.println("URL: " + href + " returned " + e.getMessage());
+
+            }
+
+        }
+
+    }
+    public void credit24LT () {
+
+
+
+
+        getDriver().get("https://credit24.lt/");
+
+        List<String> hrefs = new ArrayList<String>();
+        List<WebElement> anchors = getDriver().findElements(By.tagName("a"));
+
+        for (WebElement anchor : anchors) {
+
+            if ( anchor.getAttribute("href") != null )
+                hrefs.add(anchor.getAttribute("href"));
+
+        }
+
+        for (String href : hrefs) {
+
+            try {
+
+                int responseCode = returnStatusCode(new URL(href));
+                if ( responseCode != 200 ) {
+                    System.out.println("The broken Link is " + href);
+
+                }
+                else {
+
+                    System.out.println("The working Link is " + href);
+
+                }
+            }
+            catch (Exception e) {
+                System.out.println("URL: " + href + " returned " + e.getMessage());
+
+            }
+
+        }
+
+    }
+
+
 
     public int returnStatusCode(URL url) {
         Response resp = given().
@@ -68,5 +234,7 @@ public class GetRequestTest extends DriverFactory {
 
         return resp.getStatusCode();
     }
+
+
 
 }
