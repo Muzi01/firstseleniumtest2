@@ -1,114 +1,70 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/newLinks.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/login2.feature");
 formatter.feature({
-  "name": "test",
+  "name": "login orange",
   "description": "",
-  "keyword": "Feature",
-  "tags": [
-    {
-      "name": "@links"
-    }
-  ]
+  "keyword": "Feature"
 });
 formatter.scenario({
-  "name": "Test links on TVN24",
+  "name": "Login To Orange",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@links"
+      "name": "@1"
     },
     {
-      "name": "@smoke"
+      "name": "@login"
     }
   ]
 });
 formatter.step({
-  "name": "System checks links on tvn24",
-  "keyword": "Given "
+  "name": "Customer is on application page",
+  "keyword": "When "
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.step({
+  "name": "He is login to System",
+  "keyword": "And "
 });
 formatter.match({});
 formatter.result({
   "status": "undefined"
 });
 formatter.scenario({
-  "name": "Test links on wp.pl",
+  "name": "Login to Orange Alternative",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@links"
+      "name": "@3"
     },
     {
-      "name": "@smoke"
+      "name": "@login"
     }
   ]
 });
 formatter.step({
-  "name": "System Check lins on  wp.pl",
-  "keyword": "Given "
+  "name": "Customer is on application page",
+  "keyword": "When "
 });
 formatter.match({});
 formatter.result({
   "status": "undefined"
 });
-formatter.scenario({
-  "name": "Scenario: Test links on happipozyczki.pl",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@links"
-    },
-    {
-      "name": "@smoke"
-    }
-  ]
-});
 formatter.step({
-  "name": "System Check lins on  happipozyczki",
-  "keyword": "Given "
+  "name": "Fill His username",
+  "keyword": "And "
 });
 formatter.match({});
 formatter.result({
   "status": "undefined"
 });
-formatter.scenario({
-  "name": "Scenario: Test links on creditea.es",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@links"
-    },
-    {
-      "name": "@smoke"
-    }
-  ]
-});
 formatter.step({
-  "name": "System Check lins on  creditea es",
-  "keyword": "Given "
-});
-formatter.match({});
-formatter.result({
-  "status": "undefined"
-});
-formatter.scenario({
-  "name": "Scenario: Test links on credit24.lt",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@links"
-    },
-    {
-      "name": "@smoke"
-    }
-  ]
-});
-formatter.step({
-  "name": "System Check lins on  credit24.lt",
-  "keyword": "Given "
+  "name": "Fill His password",
+  "keyword": "And "
 });
 formatter.match({});
 formatter.result({

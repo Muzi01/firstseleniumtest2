@@ -1,162 +1,96 @@
 [
   {
-    "line": 2,
+    "line": 1,
     "elements": [
       {
-        "start_timestamp": "2020-06-05T16:31:31.559Z",
-        "line": 4,
-        "name": "Test links on TVN24",
+        "start_timestamp": "2020-06-05T19:06:23.835Z",
+        "line": 3,
+        "name": "Login To Orange",
         "description": "",
-        "id": "test;test-links-on-tvn24",
+        "id": "login-orange;login-to-orange",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 4,
+            "name": "Customer is on application page",
+            "match": {},
+            "keyword": "When "
+          },
           {
             "result": {
               "status": "undefined"
             },
             "line": 5,
-            "name": "System checks links on tvn24",
+            "name": "He is login to System",
             "match": {},
-            "keyword": "Given "
+            "keyword": "And "
           }
         ],
         "tags": [
           {
-            "name": "@links"
+            "name": "@1"
           },
           {
-            "name": "@smoke"
+            "name": "@login"
           }
         ]
       },
       {
-        "start_timestamp": "2020-06-05T16:31:31.634Z",
-        "line": 9,
-        "name": "Test links on wp.pl",
+        "start_timestamp": "2020-06-05T19:06:23.921Z",
+        "line": 7,
+        "name": "Login to Orange Alternative",
         "description": "",
-        "id": "test;test-links-on-wp.pl",
+        "id": "login-orange;login-to-orange-alternative",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 8,
+            "name": "Customer is on application page",
+            "match": {},
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 9,
+            "name": "Fill His username",
+            "match": {},
+            "keyword": "And "
+          },
           {
             "result": {
               "status": "undefined"
             },
             "line": 10,
-            "name": "System Check lins on  wp.pl",
+            "name": "Fill His password",
             "match": {},
-            "keyword": "Given "
+            "keyword": "And "
           }
         ],
         "tags": [
           {
-            "name": "@links"
+            "name": "@3"
           },
           {
-            "name": "@smoke"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-05T16:31:31.639Z",
-        "line": 12,
-        "name": "Scenario: Test links on happipozyczki.pl",
-        "description": "",
-        "id": "test;scenario:-test-links-on-happipozyczki.pl",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "status": "undefined"
-            },
-            "line": 13,
-            "name": "System Check lins on  happipozyczki",
-            "match": {},
-            "keyword": "Given "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@links"
-          },
-          {
-            "name": "@smoke"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-05T16:31:31.643Z",
-        "line": 15,
-        "name": "Scenario: Test links on creditea.es",
-        "description": "",
-        "id": "test;scenario:-test-links-on-creditea.es",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "status": "undefined"
-            },
-            "line": 16,
-            "name": "System Check lins on  creditea es",
-            "match": {},
-            "keyword": "Given "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@links"
-          },
-          {
-            "name": "@smoke"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2020-06-05T16:31:31.646Z",
-        "line": 18,
-        "name": "Scenario: Test links on credit24.lt",
-        "description": "",
-        "id": "test;scenario:-test-links-on-credit24.lt",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "status": "undefined"
-            },
-            "line": 19,
-            "name": "System Check lins on  credit24.lt",
-            "match": {},
-            "keyword": "Given "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@links"
-          },
-          {
-            "name": "@smoke"
+            "name": "@login"
           }
         ]
       }
     ],
-    "name": "test",
+    "name": "login orange",
     "description": "",
-    "id": "test",
+    "id": "login-orange",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/newLinks.feature",
-    "tags": [
-      {
-        "name": "@links",
-        "type": "Tag",
-        "location": {
-          "line": 1,
-          "column": 1
-        }
-      }
-    ]
+    "uri": "file:src/test/resources/login2.feature",
+    "tags": []
   }
 ]
