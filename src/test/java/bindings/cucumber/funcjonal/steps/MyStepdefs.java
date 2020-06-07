@@ -3,6 +3,7 @@ package bindings.cucumber.funcjonal.steps;
 import bindings.cucumber.funcjonal.pages.linkedin.LinkedInLoginPage;
 import bindings.cucumber.funcjonal.pages.orange.LoginPage;
 import bindings.cucumber.funcjonal.pages.orange.LoginPage2;
+import bindings.cucumber.funcjonal.pages.orange.LoginPage3;
 import bindings.cucumber.funcjonal.pages.orange.WaitStepsService;
 
 import io.cucumber.java.en.And;
@@ -20,13 +21,15 @@ public class MyStepdefs {
     private final LinkedInLoginPage linkedInLoginPage;
     private final WaitStepsService waitStepsService;
     private final LoginPage2 loginPage2 ;
+    private final LoginPage3 loginPage3;
     private final GetRequestTest getRequestTest;
-    public MyStepdefs(final PageNavigator pageNavigator, LoginPage loginPage, LinkedInLoginPage linkedInLoginPage, WaitStepsService waitStepsService, LoginPage2 loginPage2, GetRequestTest getRequestTest) {
+    public MyStepdefs(final PageNavigator pageNavigator, LoginPage loginPage, LinkedInLoginPage linkedInLoginPage, WaitStepsService waitStepsService, LoginPage2 loginPage2, LoginPage3 loginPage3, GetRequestTest getRequestTest) {
         this.pageNavigator = pageNavigator;
         this.loginPage = loginPage;
         this.linkedInLoginPage = linkedInLoginPage;
         this.waitStepsService = waitStepsService;
         this.loginPage2 = loginPage2;
+        this.loginPage3 = loginPage3;
         this.getRequestTest = getRequestTest;
     }
 
@@ -99,5 +102,17 @@ public class MyStepdefs {
 
     @Given ("^System Check lins on  credit(\\d+)\\.lt$")
     public void systemCheckLinsOnCreditLt (int arg0) {getRequestTest.credit24LT ();
+    }
+
+    @Given("He opens login page")
+    public void heOpensLoginPage() {loginPage3.openPage();
+    }
+
+    @And("Fill login data")
+    public void fillLoginData() {loginPage3.login3();
+    }
+
+    @And("Fill password data")
+    public void fillPasswordData() {loginPage3.password();
     }
 }

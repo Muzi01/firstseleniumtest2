@@ -9,9 +9,9 @@ import io.cucumber.junit.CucumberOptions;
         plugin = {"html:reports/cucumber-html-report",
                 "json:reports/cucumber.json",
                 "pretty"},
-        tags = {"@login"},
+        tags = {"@links"},
         features = {"src/test/resources"},
-        glue = {"bindings.cucumber.functional"}
+        glue = {"bindings"}
 )
 
 public class MyRunner {
