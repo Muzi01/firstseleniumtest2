@@ -9,8 +9,8 @@ Feature: Login
     Given User is on linkedin login page
     Given User fill login
 
-
-    Scenario:  alternatywa 3 logowania
+@Orange @logowanie
+    Scenario:  Alternatywa 3 logowania
       Given He opens login page
       And Fill login data
       And Fill password data

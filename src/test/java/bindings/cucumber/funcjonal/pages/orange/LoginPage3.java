@@ -49,28 +49,21 @@ public class LoginPage3 extends DriverFactory {
     public WebElement Zaloguj2;
 
     @Test
-    public void test
-            () throws InterruptedException {
-        SeleniumHelper helper = new SeleniumHelper();
-        PageFactory.initElements(getDriver(), this);
-        getDriver().get("https://www.orange.pl/zaloguj.phtml");
-        getDriver().findElement(By.id("login-field")).sendKeys("piotr.kramkowski@gmail.com");
-        getDriver().findElement(By.id("login-box__button")).click();
-        getDriver().findElement(By.id("password")).sendKeys("Pioneer123!");
-        getDriver().findElement(By.xpath("//button[@id='loginButton']/span")).click();
-        closeDriver();
-    }
+
     public void  openPage () {
         getDriver().get("https://www.orange.pl/zaloguj.phtml");
     }
-    public void login3 () {
+    public void login3 () throws InterruptedException {
         getDriver().findElement(By.id("login-field")).sendKeys("piotr.kramkowski@gmail.com");
+        Thread.sleep(700);
         getDriver().findElement(By.id("login-box__button")).click();
     }
 
-    public void password (){
+    public void password () throws InterruptedException {
         getDriver().findElement(By.id("password")).sendKeys("Pioneer123!");
         getDriver().findElement(By.xpath("//button[@id='loginButton']/span")).click();
+        Thread.sleep(1000);
+        getDriver().quit();
 
 
     }
