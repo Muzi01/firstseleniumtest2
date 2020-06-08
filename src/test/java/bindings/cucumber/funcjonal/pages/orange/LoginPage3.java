@@ -1,6 +1,7 @@
 package bindings.cucumber.funcjonal.pages.orange;
 
 
+import bindings.driver.Driver2;
 import bindings.driver.DriverFactory;
 import bindings.driver.SeleniumHelper;
 import org.apache.logging.log4j.LogManager;
@@ -11,7 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage3 extends DriverFactory {
+public class LoginPage3 extends Driver2 {
     private static final Logger LOGGER = LogManager.getLogger (LoginPage.class);
     private static final String EMAIL_ID = "login-field";
     private static final String PASSWORD_ID = "password";
@@ -23,6 +24,9 @@ public class LoginPage3 extends DriverFactory {
     private static final String ZALOGUJ2_TEXT = "Zaloguj się";
     private static final String LOGIN = "piotr.kramkowski@gmail.com";
     private static final String PASSWORD = "Pioneer123!";
+    private static final String ZALOGUJ_XPATH = "login-box__button";
+    private static final String ZALOGUJ2_XPATH = "//button[@id='loginButton']/span";
+
 
     @FindBy (id = EMAIL_ID)
     public WebElement email;
@@ -30,8 +34,8 @@ public class LoginPage3 extends DriverFactory {
     @FindBy (id = PASSWORD_ID)
     public WebElement password;
 
-    @FindBy (id = "loginButton")
-    public WebElement loginButton;
+    @FindBy (xpath = "loginButton")
+    public WebElement loginButton1;
 
     @FindBy (linkText = "Dalej")
     public WebElement Dalej;
@@ -45,25 +49,32 @@ public class LoginPage3 extends DriverFactory {
     @FindBy (id = LOGIN2_ID)
     public WebElement Login2;
 
-    @FindBy (linkText = ZALOGUJ2_TEXT)
-    public WebElement Zaloguj2;
+    @FindBy (id = ZALOGUJ_XPATH)
+    public WebElement loginButton;
 
-    @Test
+    @FindBy (xpath = ZALOGUJ2_XPATH)
+    public WebElement loginbutton2;
+
+    public LoginPage3() throws IllegalAccessException, InstantiationException, ClassNotFoundException {
+        super ();
+        PageFactory.initElements(driver, this);
+    }
+
 
     public void  openPage () {
-        getDriver().get("https://www.orange.pl/zaloguj.phtml");
-    }
-    public void login3 () throws InterruptedException {
-        getDriver().findElement(By.id("login-field")).sendKeys("piotr.kramkowski@gmail.com");
-        Thread.sleep(700);
-        getDriver().findElement(By.id("login-box__button")).click();
+        driver.get("https://www.orange.pl/zaloguj.phtml");
     }
 
-    public void password () throws InterruptedException {
-        getDriver().findElement(By.id("password")).sendKeys("Pioneer123!");
-        getDriver().findElement(By.xpath("//button[@id='loginButton']/span")).click();
-        Thread.sleep(1000);
-        getDriver().quit();
+    public void wpisanieLoginu(){
+        email.sendKeys ("piotr.kramkowski@gmail.com");
+        loginButton.click ();
+
+
+    }
+
+    public void wpisanieHasla (){
+        password.sendKeys (PASSWORD);
+        loginbutton2.click ();
 
 
     }

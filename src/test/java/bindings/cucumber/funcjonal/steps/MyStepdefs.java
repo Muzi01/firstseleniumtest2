@@ -108,11 +108,11 @@ public class MyStepdefs {
     public void heOpensLoginPage() {loginPage3.openPage();
     }
 
-    @And("Fill login data")
-    public void fillLoginData() throws InterruptedException {loginPage3.login3();
+    @And ("Write login")
+    public void writeLogin () {loginPage3.wpisanieLoginu ();
     }
 
-    @And("Fill password data")
-    public void fillPasswordData() throws InterruptedException {loginPage3.password();
+    @And ("Write password")
+    public void writePassword () {loginPage3.wpisanieHasla ();
     }
 }

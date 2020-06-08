@@ -11,7 +11,7 @@ import org.testng.annotations.DataProvider;
         features = "src/test/resources",
         glue= {"bindings"},
         plugin = { "pretty" },
-        tags = {"@TEST-88653"},
+        tags = {"@critical"},
         monochrome = true
 )
 

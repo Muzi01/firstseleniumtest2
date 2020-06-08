@@ -7,6 +7,7 @@ bindings/cucumber/funcjonal/pages/orange/StoryProxyComponent.class
 bindings/cucumber/linkstatusverification/VerifyLinksActivity.class
 Niebespiecznik.class
 bindings/cucumber/funcjonal/steps/NiebespiecznikPage.class
+tests/legacy/GetRequestTest2.class
 bindings/driver/MobileType.class
 bindings/driver/DimensionType.class
 bindings/cucumber/linkstatusverification/Buffer.class
@@ -23,11 +24,10 @@ bindings/cucumber/linkstatusverification/CookiesHolder.class
 tests/legacy/VerifyLinks.class
 bindings/cucumber/funcjonal/pages/fields/AbstractField.class
 tests/legacy/BrokenLink.class
-tests/Orange/Tests/Login.class
-tests/Orange/Tests/LoginImpl.class
 bindings/cucumber/funcjonal/pages/StoryProxyComponent.class
 bindings/cucumber/funcjonal/pages/PageFactory.class
 bindings/cucumber/funcjonal/pages/PageNotFoundException.class
+bindings/driver/Driver2.class
 tests/legacy/allegro_logowanie2.class
 bindings/cucumber/funcjonal/pages/fields/Button.class
 bindings/driver/Driver.class
@@ -50,18 +50,15 @@ bindings/cucumber/linkstatusverification/RestClientAddressProvider.class
 bindings/cucumber/funcjonal/pages/orange/LoginPage3.class
 bindings/cucumber/funcjonal/steps/LoginPageSteps.class
 tests/legacy/IdentifyingBrokenLinks2.class
-tests/Orange/Tests/LoginTest.class
 bindings/cucumber/funcjonal/pages/PageElementsFactory.class
 bindings/cucumber/funcjonal/pages/linkedin/LinkedInLoginPage.class
 bindings/cucumber/funcjonal/pages/ProxyCucumberScope.class
 bindings/cucumber/funcjonal/steps/MyStepdefs.class
 bindings/cucumber/linkstatusverification/SingleValueHolder.class
 bindings/cucumber/Rest/RestSteps.class
-bindings/cucumber/funcjonal/pages/TestType$1.class
 MyStepdefs.class
 bindings/cucumber/linkstatusverification/KibanaLoggerDetails.class
 bindings/cucumber/funcjonal/pages/fields/Field.class
-bindings/cucumber/funcjonal/pages/TestType.class
 bindings/cucumber/linkstatusverification/RESTSteps.class
 bindings/cucumber/linkstatusverification/KibanaLogger.class
 bindings/cucumber/funcjonal/pages/JSExecutor.class
@@ -94,7 +91,6 @@ bindings/cucumber/funcjonal/pages/fields/Slider.class
 tests/legacy/FunctionalTest.class
 runners/SerenityTestRunner.class
 bindings/cucumber/linkstatusverification/RESTStepsImpl.class
-bindings/cucumber/funcjonal/pages/fields/GuiTestParameters.class
 tests/legacy/UserResourceAPITest.class
 tests/legacy/IdentifyingBrokenLinks.class
 tests/legacy/HelloWorldRestAssured.class

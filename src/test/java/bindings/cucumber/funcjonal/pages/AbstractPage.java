@@ -8,7 +8,7 @@ import java.util.Optional;
 import javax.annotation.PostConstruct;
 
 import bindings.cucumber.funcjonal.pages.fields.AbstractField;
-import bindings.cucumber.funcjonal.pages.fields.GuiTestParameters;
+
 import bindings.driver.DriverFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -39,8 +39,7 @@ public abstract class AbstractPage {
     @Autowired
     protected PageElementsFactory pageElementsFactory;
 
-    @Autowired
-    protected GuiTestParameters guiTestParameters;
+
 
     @PostConstruct
     public void init() {

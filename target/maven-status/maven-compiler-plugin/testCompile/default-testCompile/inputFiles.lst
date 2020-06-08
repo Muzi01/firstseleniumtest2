@@ -1,5 +1,4 @@
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/bindings/cucumber/linkstatusverification/CustomerBrandProvider.java
-/Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/tests/Orange/Tests/Login.java
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/bindings/driver/HelperMethods.java
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/bindings/cucumber/funcjonal/steps/MyStepdefs.java
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/bindings/cucumber/linkstatusverification/Brand.java
@@ -13,7 +12,6 @@
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/bindings/cucumber/linkstatusverification/TrustAnyTrustManager.java
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/bindings/cucumber/funcjonal/pages/orange/LoginPage3.java
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/tests/legacy/GetRequestTest.java
-/Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/tests/Orange/Tests/LoginImpl.java
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/tests/legacy/GetWeatherDetails.java
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/bindings/driver/ChromeBrowser.java
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/bindings/cucumber/funcjonal/pages/orange/MainPage.java
@@ -54,6 +52,7 @@
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/runners/MyRunner.java
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/bindings/cucumber/linkstatusverification/CustomerCountryProvider.java
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/bindings/cucumber/funcjonal/pages/TestType.java
+/Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/bindings/driver/Driver2.java
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/bindings/cucumber/funcjonal/pages/fields/Button.java
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/bindings/driver/MobileType.java
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/bindings/cucumber/funcjonal/pages/PageElementsFactory.java
@@ -70,7 +69,6 @@
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/bindings/cucumber/funcjonal/steps/PageStepsService.java
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/bindings/cucumber/linkstatusverification/AbstractSingleValueHolder.java
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/tests/legacy/Links.java
-/Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/tests/Orange/Tests/LoginTest.java
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/bindings/cucumber/linkstatusverification/Buffer.java
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/bindings/driver/RestUtil.java
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/tests/legacy/ddd.java
@@ -80,6 +78,7 @@
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/bindings/cucumber/linkstatusverification/RESTStepsImpl.java
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/bindings/cucumber/funcjonal/pages/orange/WaitStepsService.java
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/bindings/driver/SeleniumHelper.java
+/Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/tests/legacy/GetRequestTest2.java
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/runners/TestRunner.java
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/tests/legacy/allegro_logowanie.java
 /Users/muzi/IdeaProjects/firstseleniumtest23/src/test/java/bindings/cucumber/funcjonal/pages/niebespiecznik/Niebespiecznik.java

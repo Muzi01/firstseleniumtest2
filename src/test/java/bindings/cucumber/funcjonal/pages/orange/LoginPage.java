@@ -47,9 +47,11 @@ public class LoginPage  extends AbstractPage {
 
     @FindBy (linkText =ZALOGUJ2_TEXT)
     public   WebElement  Zaloguj2;
+
     public LoginPage(final DriverFactory driverFactory) {
         PageFactory.initElements(driverFactory.getDriver(), this);
     }
+
 
     public void fillLogin (){
         sendKeys (email,"piotr.kramkowski@gmail.com");
