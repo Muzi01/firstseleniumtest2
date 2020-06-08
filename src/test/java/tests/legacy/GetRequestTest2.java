@@ -1,6 +1,5 @@
 package tests.legacy;
 
-import bindings.driver.Driver2;
 import bindings.driver.DriverFactory;
 import io.restassured.response.Response;
 import org.openqa.selenium.By;
@@ -14,7 +13,7 @@ import java.util.List;
 import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
 
-public class GetRequestTest2 extends Driver2 {
+public class GetRequestTest2 extends DriverFactory {
 
     public GetRequestTest2 () throws ClassNotFoundException, IllegalAccessException, InstantiationException {
     }
@@ -25,10 +24,10 @@ public class GetRequestTest2 extends Driver2 {
 
 
 
-        driver.get("http://google.pl/");
+        getDriver().get("http://google.pl/");
 
         List<String> hrefs = new ArrayList<String>();
-        List<WebElement> anchors = driver.findElements(By.tagName("a"));
+        List<WebElement> anchors = getDriver().findElements(By.tagName("a"));
 
         for (WebElement anchor : anchors) {
 

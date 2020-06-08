@@ -1,7 +1,6 @@
 package bindings.cucumber.funcjonal.pages.travel;
 
-import bindings.cucumber.funcjonal.pages.orange.LoginPage;
-import bindings.driver.Driver2;
+import bindings.driver.DriverFactory;
 import com.devskiller.jfairy.Fairy;
 import com.devskiller.jfairy.producer.person.Person;
 import org.apache.logging.log4j.LogManager;
@@ -10,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class RegisterPage  extends Driver2 {
+public class RegisterPage  extends DriverFactory {
 
     private static final Logger LOGGER = LogManager.getLogger (RegisterPage.class);
     private static final String FIRSTNAME_NAME = "firstname";
@@ -49,7 +48,7 @@ public class RegisterPage  extends Driver2 {
 
     public RegisterPage () throws ClassNotFoundException, IllegalAccessException, InstantiationException {
 
-        PageFactory.initElements(driver, this);
+        PageFactory.initElements(getDriver(), this);
     }
 
 
@@ -61,12 +60,12 @@ public class RegisterPage  extends Driver2 {
         password.sendKeys ("Qwerty123");
         confirmpassword.sendKeys ("Qwerty123");
         loginButton.click ();
-        driver.quit ();
+        getDriver().quit ();
 
 
     }
         public void  openPage () {
-            driver.get("http://www.kurs-selenium.pl/demo/register");
+            getDriver().get("http://www.kurs-selenium.pl/demo/register");
 
         }
 

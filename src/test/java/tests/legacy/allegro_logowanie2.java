@@ -2,17 +2,16 @@ package tests.legacy;
 
 
 
-import bindings.driver.Driver;
-import bindings.driver.DriverFactory2;
+import bindings.driver.DriverFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
 
 import static org.junit.Assert.fail;
 
-public class allegro_logowanie2 extends DriverFactory2 {
+public class allegro_logowanie2 extends DriverFactory {
 
-    private static Logger logger = LogManager.getLogger(allegro_logowanie2.class);
+    private static final Logger logger = LogManager.getLogger(allegro_logowanie2.class);
 
 
     @Test

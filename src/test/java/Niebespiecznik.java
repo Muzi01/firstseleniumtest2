@@ -1,10 +1,10 @@
-import bindings.driver.Driver;
+import bindings.driver.DriverFactory;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class Niebespiecznik extends Driver {
+public class Niebespiecznik extends DriverFactory {
 
     @FindBy (linkText = "niebe*Z*piecznik.pl")
     private WebElement Nienespiecznik;
@@ -21,7 +21,7 @@ public class Niebespiecznik extends Driver {
 
     @Given("^I am on Niebespiecznik  page$")
     public void I_am_on_Niebespiecznik_page () throws Throwable {
-        driver.get ("https://niebespiecznik.pl/");
+        getDriver().get ("https://niebespiecznik.pl/");
     }
 
     @And("^I click niebespiecznik button$")

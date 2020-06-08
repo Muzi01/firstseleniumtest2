@@ -2,7 +2,6 @@ package bindings.cucumber.funcjonal.pages.linkedin;
 
 import bindings.cucumber.funcjonal.pages.AbstractPage;
 import bindings.cucumber.funcjonal.pages.orange.LoginPage;
-import bindings.driver.Driver;
 import bindings.driver.DriverFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

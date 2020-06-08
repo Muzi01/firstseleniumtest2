@@ -1,18 +1,14 @@
 package bindings.cucumber.funcjonal.pages.orange;
 
 
-import bindings.driver.Driver2;
 import bindings.driver.DriverFactory;
-import bindings.driver.SeleniumHelper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage3 extends Driver2 {
+public class LoginPage3 extends DriverFactory {
     private static final Logger LOGGER = LogManager.getLogger (LoginPage.class);
     private static final String EMAIL_ID = "login-field";
     private static final String PASSWORD_ID = "password";
@@ -57,12 +53,12 @@ public class LoginPage3 extends Driver2 {
 
     public LoginPage3() throws IllegalAccessException, InstantiationException, ClassNotFoundException {
         super ();
-        PageFactory.initElements(driver, this);
+        PageFactory.initElements(getDriver(), this);
     }
 
 
     public void  openPage () {
-        driver.get("https://www.orange.pl/zaloguj.phtml");
+        getDriver().get("https://www.orange.pl/zaloguj.phtml");
     }
 
     public void wpisanieLoginu(){

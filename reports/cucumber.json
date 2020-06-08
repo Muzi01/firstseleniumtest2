@@ -3,7 +3,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2020-06-08T11:24:34.738Z",
+        "start_timestamp": "2020-06-08T18:25:25.603Z",
         "line": 3,
         "name": "Registraction Process in travell planet",
         "description": "",
@@ -13,7 +13,7 @@
         "steps": [
           {
             "result": {
-              "duration": 5463000000,
+              "duration": 10351000000,
               "status": "passed"
             },
             "line": 5,
@@ -25,7 +25,7 @@
           },
           {
             "result": {
-              "duration": 438000000,
+              "duration": 1246000000,
               "status": "passed"
             },
             "line": 6,

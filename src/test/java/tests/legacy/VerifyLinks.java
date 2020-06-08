@@ -2,17 +2,10 @@ package tests.legacy;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.List;
-
-import bindings.driver.Driver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import bindings.driver.DriverFactory;
 import org.testng.annotations.Test;
 
-public class VerifyLinks extends Driver {
+public class VerifyLinks extends DriverFactory {
     public static int invalidLink;
     String currentLink;
     String temp;

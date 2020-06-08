@@ -1,15 +1,13 @@
 package tests.legacy;
 
 
-import bindings.driver.Driver;
-import bindings.driver.Driver2;
-import bindings.driver.SeleniumHelper;
+import bindings.driver.DriverFactory;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
-public class cucumber2 extends Driver2 {
+public class cucumber2 extends DriverFactory {
     @FindBy(linkText = "niebe*Z*piecznik.pl")
     private WebElement Nienespiecznik;
 
@@ -28,8 +26,8 @@ public class cucumber2 extends Driver2 {
     @Test
     public void nightstick() throws InterruptedException {
 
-        PageFactory.initElements(driver, this);
-        driver.get("https://niebespiecznik.pl/");
+        PageFactory.initElements(getDriver(), this);
+        getDriver().get("https://niebespiecznik.pl/");
         Nienespiecznik.click( );
         Thread.sleep(1000);
         Praca.click( );

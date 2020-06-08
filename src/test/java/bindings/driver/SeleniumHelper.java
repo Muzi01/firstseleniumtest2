@@ -10,10 +10,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class SeleniumHelper extends Driver{
+public class SeleniumHelper extends DriverFactory{
 
     public void takeScrenshoot ()  {
-        TakesScreenshot screnshooter = (TakesScreenshot) driver ;
+        TakesScreenshot screnshooter = (TakesScreenshot) getDriver() ;
         File screenshot  =screnshooter.getScreenshotAs(OutputType.FILE);
         try {
             Files.copy(screenshot.toPath(), Paths.get("src/main/resources/test.pmg"));

@@ -1,6 +1,6 @@
 package tests.legacy;
 
-import bindings.driver.Driver;
+import bindings.driver.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterMethod;
@@ -10,14 +10,14 @@ import java.util.List;
 
 import static io.restassured.RestAssured.given;
 
-public class IdentifyingBrokenLinks2 extends Driver {
+public class IdentifyingBrokenLinks2 extends DriverFactory {
 
 
     @Test
     public void printBrokenLinks() {
 
-        driver.get("https://www.google.pl");
-        List<WebElement> anchor_links = driver.findElements(By.tagName("g"));
+        getDriver().get("https://www.google.pl");
+        List<WebElement> anchor_links = getDriver().findElements(By.tagName("g"));
 
         //getting the urls of the links into another List
         List<String> link_urls = null;
@@ -35,6 +35,6 @@ public class IdentifyingBrokenLinks2 extends Driver {
 
     @AfterMethod
     public void closeBrowser() {
-        driver.quit();
+        getDriver().quit();
     }
 }
