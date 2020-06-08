@@ -1,6 +1,7 @@
 package bindings.cucumber.funcjonal.steps;
 
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
 
 public class NavigationSteps {
 
@@ -19,4 +20,6 @@ public class NavigationSteps {
     public void userIsOnLinkedinLoginPage () {
         pageNavigator.navigatetoLinkedin ();
     }
+
+
 }

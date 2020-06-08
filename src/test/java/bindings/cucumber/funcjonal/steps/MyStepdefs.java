@@ -6,6 +6,7 @@ import bindings.cucumber.funcjonal.pages.orange.LoginPage2;
 import bindings.cucumber.funcjonal.pages.orange.LoginPage3;
 import bindings.cucumber.funcjonal.pages.orange.WaitStepsService;
 
+import bindings.cucumber.funcjonal.pages.travel.RegisterPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -23,7 +24,8 @@ public class MyStepdefs {
     private final LoginPage2 loginPage2 ;
     private final LoginPage3 loginPage3;
     private final GetRequestTest getRequestTest;
-    public MyStepdefs(final PageNavigator pageNavigator, LoginPage loginPage, LinkedInLoginPage linkedInLoginPage, WaitStepsService waitStepsService, LoginPage2 loginPage2, LoginPage3 loginPage3, GetRequestTest getRequestTest) {
+    private final RegisterPage registerPage;
+    public MyStepdefs (final PageNavigator pageNavigator, LoginPage loginPage, LinkedInLoginPage linkedInLoginPage, WaitStepsService waitStepsService, LoginPage2 loginPage2, LoginPage3 loginPage3, GetRequestTest getRequestTest, RegisterPage registerPage) {
         this.pageNavigator = pageNavigator;
         this.loginPage = loginPage;
         this.linkedInLoginPage = linkedInLoginPage;
@@ -31,6 +33,7 @@ public class MyStepdefs {
         this.loginPage2 = loginPage2;
         this.loginPage3 = loginPage3;
         this.getRequestTest = getRequestTest;
+        this.registerPage = registerPage;
     }
 
 
@@ -114,5 +117,16 @@ public class MyStepdefs {
 
     @And ("Write password")
     public void writePassword () {loginPage3.wpisanieHasla ();
+    }
+
+    @Then ("He register account via Webpage")
+    public void heRegisterAccountViaWebpage () {registerPage.registracionprocses ();
+
+    }
+
+    @When ("Customer is on travell planet registraction page")
+    public void customerIsOnTravellPlanetRegistractionPage () {registerPage.openPage ();
+
+
     }
 }

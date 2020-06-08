@@ -10,10 +10,14 @@ Feature: Login
     Given User is on linkedin login page
     Given User fill login
   @critical
-  Scenario: Alternatywne logowanie xpath 3
+  Scenario: Alternatywne logowanie  Orange xpath 3
     Given He opens login page
     And Write login
     And Write password
+
+
+
+
 
 
 

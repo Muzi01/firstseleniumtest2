@@ -2,9 +2,13 @@
   <dictionary name="muzi">
     <words>
       <w>checkwp</w>
+      <w>confirmpassword</w>
       <w>dalej</w>
+      <w>firstname</w>
       <w>jfairy</w>
       <w>kontakt</w>
+      <w>lastname</w>
+      <w>registraction</w>
       <w>zaloguj</w>
     </words>
   </dictionary>
