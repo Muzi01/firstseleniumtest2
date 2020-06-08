@@ -1,0 +1,53 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2020-06-08T11:24:34.738Z",
+        "line": 3,
+        "name": "Registraction Process in travell planet",
+        "description": "",
+        "id": "registraction-process;registraction-process-in-travell-planet",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5463000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Customer is on travell planet registraction page",
+            "match": {
+              "location": "bindings.cucumber.funcjonal.steps.MyStepdefs.customerIsOnTravellPlanetRegistractionPage()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 438000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "He register account via Webpage",
+            "match": {
+              "location": "bindings.cucumber.funcjonal.steps.MyStepdefs.heRegisterAccountViaWebpage()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@register"
+          }
+        ]
+      }
+    ],
+    "name": "Registraction process",
+    "description": "",
+    "id": "registraction-process",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Registraction.feature",
+    "tags": []
+  }
+]

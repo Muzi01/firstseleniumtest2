@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
         plugin = {"html:reports/cucumber-html-report",
                 "json:reports/cucumber.json",
                 "pretty"},
-        tags = {"@links"},
+        tags = {"@register"},
         features = {"src/test/resources"},
         glue = {"bindings"}
 )

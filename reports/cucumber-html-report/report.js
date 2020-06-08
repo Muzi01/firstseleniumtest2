@@ -1,54 +1,37 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/newLinks.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/Registraction.feature");
 formatter.feature({
-  "name": "test",
+  "name": "Registraction process",
   "description": "",
-  "keyword": "Feature",
-  "tags": [
-    {
-      "name": "@links"
-    }
-  ]
+  "keyword": "Feature"
 });
 formatter.scenario({
-  "name": "Test links on TVN24",
+  "name": "Registraction Process in travell planet",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@links"
-    },
-    {
-      "name": "@smoke"
+      "name": "@register"
     }
   ]
 });
 formatter.step({
-  "name": "System checks links on tvn24",
-  "keyword": "Given "
+  "name": "Customer is on travell planet registraction page",
+  "keyword": "When "
 });
 formatter.match({
-  "location": "bindings.cucumber.funcjonal.steps.MyStepdefs.systemChecksLinksOnTvn(int)"
+  "location": "bindings.cucumber.funcjonal.steps.MyStepdefs.customerIsOnTravellPlanetRegistractionPage()"
 });
 formatter.result({
   "status": "passed"
 });
-formatter.scenario({
-  "name": "Test links on wp.pl",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@links"
-    },
-    {
-      "name": "@smoke"
-    }
-  ]
-});
 formatter.step({
-  "name": "System Check lins on  wp.pl",
-  "keyword": "Given "
+  "name": "He register account via Webpage",
+  "keyword": "Then "
 });
 formatter.match({
-  "location": "bindings.cucumber.funcjonal.steps.MyStepdefs.systemCheckLinsOnWpPl()"
+  "location": "bindings.cucumber.funcjonal.steps.MyStepdefs.heRegisterAccountViaWebpage()"
+});
+formatter.result({
+  "status": "passed"
+});
 });

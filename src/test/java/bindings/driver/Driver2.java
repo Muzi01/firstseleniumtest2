@@ -16,7 +16,8 @@ public class Driver2 {
     public static WebDriver driver;
     public static final Logger LOGGER = LogManager.getLogger(Driver2.class);
 
-    public Driver2 () throws ClassNotFoundException, IllegalAccessException, InstantiationException {
+
+    public  Driver2 () throws ClassNotFoundException, IllegalAccessException, InstantiationException {
         DriverManagerType chrome = DriverManagerType.CHROME;
         WebDriverManager.getInstance (chrome).setup ();
         Class<?> chromeClass = Class.forName (chrome.browserClass ());
@@ -34,5 +35,10 @@ public class Driver2 {
     @AfterClass
     public void tearDown () {
         driver.quit ();
+        Driver2.restetDriver();
+    }
+
+    private static void restetDriver () {
+
     }
 }
