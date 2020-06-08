@@ -14,7 +14,7 @@ Feature: Login
     Given He opens login page
     And Write login
     And Write password
-    Then User is logged off
+
 
 
 
