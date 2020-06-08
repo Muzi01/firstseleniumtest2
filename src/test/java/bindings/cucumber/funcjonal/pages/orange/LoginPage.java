@@ -73,9 +73,6 @@ public class LoginPage  extends AbstractPage {
 
     }
 
-
-
-
     @Override
     protected String getPageName () {
         return "LoginPage";

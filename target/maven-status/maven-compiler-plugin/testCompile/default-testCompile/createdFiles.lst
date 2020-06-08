@@ -47,6 +47,7 @@ tests/legacy/GetRequestTest.class
 tests/legacy/P1.class
 bindings/cucumber/funcjonal/pages/orange/LoginPage.class
 bindings/cucumber/linkstatusverification/RestClientAddressProvider.class
+bindings/cucumber/funcjonal/pages/orange/LoginPage3.class
 bindings/cucumber/funcjonal/steps/LoginPageSteps.class
 tests/legacy/IdentifyingBrokenLinks2.class
 tests/Orange/Tests/LoginTest.class
